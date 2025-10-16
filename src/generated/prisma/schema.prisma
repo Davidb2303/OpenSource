@@ -1,0 +1,166 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model acceso {
+  pk_acceso  Int      @id @default(autoincrement())
+  usuario    String?  @db.VarChar(50)
+  contrasena String?  @db.VarChar(100)
+  fk_modulo  Int?
+  modulos    modulos? @relation(fields: [fk_modulo], references: [pk_modulos], onDelete: Restrict, onUpdate: Restrict, map: "acceso_ibfk_1")
+
+  @@index([fk_modulo], map: "fk_modulo")
+}
+
+model asignaturas {
+  pk_asignatura     Int           @id @default(autoincrement())
+  nombre_asignatura String?       @db.VarChar(100)
+  codigo            String?       @db.VarChar(20)
+  mov_asig_au       mov_asig_au[]
+  preofe_mate       preofe_mate[]
+}
+
+model aulas {
+  pk_aula     Int           @id @default(autoincrement())
+  nombre_aula String?       @db.VarChar(50)
+  capacidad   Int?
+  mov_asig_au mov_asig_au[]
+}
+
+model cargo {
+  pk_cargo     Int     @id @default(autoincrement())
+  nombre_cargo String? @db.VarChar(50)
+}
+
+model cia {
+  pk_cia     Int     @id @default(autoincrement())
+  nombre_cia String? @db.VarChar(100)
+  direccion  String? @db.VarChar(150)
+  telefono   String? @db.VarChar(20)
+}
+
+model civil {
+  pk_id_civil  Int     @id
+  nombre_civil String? @db.VarChar(50)
+  fk_id_estado Int?
+  estado       estado? @relation(fields: [fk_id_estado], references: [pk_id_estado], onDelete: Restrict, onUpdate: Restrict, map: "civil_ibfk_1")
+  datos        datos[]
+
+  @@index([fk_id_estado], map: "fk_id_estado")
+}
+
+model datos {
+  pk_dato     Int        @id @default(autoincrement())
+  nombre      String?    @db.VarChar(50)
+  apellido    String?    @db.VarChar(50)
+  fk_id_doc   Int?
+  fk_id_civil Int?
+  fk_id_gene  Int?
+  documento   documento? @relation(fields: [fk_id_doc], references: [pk_id_doc], onDelete: Restrict, onUpdate: Restrict, map: "datos_ibfk_1")
+  civil       civil?     @relation(fields: [fk_id_civil], references: [pk_id_civil], onDelete: Restrict, onUpdate: Restrict, map: "datos_ibfk_2")
+  genero      genero?    @relation(fields: [fk_id_gene], references: [pk_id_gene], onDelete: Restrict, onUpdate: Restrict, map: "datos_ibfk_3")
+
+  @@index([fk_id_civil], map: "fk_id_civil")
+  @@index([fk_id_doc], map: "fk_id_doc")
+  @@index([fk_id_gene], map: "fk_id_gene")
+}
+
+model documento {
+  pk_id_doc        Int     @id
+  nombre_documento String? @db.VarChar(100)
+  fk_id_estado     Int?
+  datos            datos[]
+  estado           estado? @relation(fields: [fk_id_estado], references: [pk_id_estado], onDelete: Restrict, onUpdate: Restrict, map: "documento_ibfk_1")
+
+  @@index([fk_id_estado], map: "fk_id_estado")
+}
+
+model estado {
+  pk_id_estado Int         @id
+  nombre       String?     @db.VarChar(50)
+  civil        civil[]
+  documento    documento[]
+  genero       genero[]
+}
+
+model genero {
+  pk_id_gene   Int     @id
+  nom_genero   String? @db.VarChar(50)
+  fk_id_estado Int?
+  datos        datos[]
+  estado       estado? @relation(fields: [fk_id_estado], references: [pk_id_estado], onDelete: Restrict, onUpdate: Restrict, map: "genero_ibfk_1")
+
+  @@index([fk_id_estado], map: "fk_id_estado")
+}
+
+model horarios {
+  pk_horario  Int           @id @default(autoincrement())
+  dia         String?       @db.VarChar(20)
+  hora_inicio DateTime?     @db.Time(0)
+  hora_fin    DateTime?     @db.Time(0)
+  mov_asig_au mov_asig_au[]
+}
+
+model laboratorio {
+  pk_lab     Int     @id @default(autoincrement())
+  nombre_lab String? @db.VarChar(100)
+  capacidad  Int?
+}
+
+model modulos {
+  pk_modulos Int      @id
+  nombre     String?  @db.VarChar(100)
+  acceso     acceso[]
+}
+
+model mov_asig_au {
+  pk_mov        Int          @id @default(autoincrement())
+  fk_asignatura Int?
+  fk_aula       Int?
+  fk_horario    Int?
+  asignaturas   asignaturas? @relation(fields: [fk_asignatura], references: [pk_asignatura], onDelete: Restrict, onUpdate: Restrict, map: "mov_asig_au_ibfk_1")
+  aulas         aulas?       @relation(fields: [fk_aula], references: [pk_aula], onDelete: Restrict, onUpdate: Restrict, map: "mov_asig_au_ibfk_2")
+  horarios      horarios?    @relation(fields: [fk_horario], references: [pk_horario], onDelete: Restrict, onUpdate: Restrict, map: "mov_asig_au_ibfk_3")
+
+  @@index([fk_asignatura], map: "fk_asignatura")
+  @@index([fk_aula], map: "fk_aula")
+  @@index([fk_horario], map: "fk_horario")
+}
+
+model pregrado {
+  pk_pregrado     Int           @id @default(autoincrement())
+  nombre_pregrado String?       @db.VarChar(100)
+  preofe_mate     preofe_mate[]
+  semestre        semestre[]
+}
+
+model preofe_mate {
+  pk_preofe     Int          @id @default(autoincrement())
+  fk_pregrado   Int?
+  fk_asignatura Int?
+  pregrado      pregrado?    @relation(fields: [fk_pregrado], references: [pk_pregrado], onDelete: Restrict, onUpdate: Restrict, map: "preofe_mate_ibfk_1")
+  asignaturas   asignaturas? @relation(fields: [fk_asignatura], references: [pk_asignatura], onDelete: Restrict, onUpdate: Restrict, map: "preofe_mate_ibfk_2")
+
+  @@index([fk_asignatura], map: "fk_asignatura")
+  @@index([fk_pregrado], map: "fk_pregrado")
+}
+
+model semestre {
+  pk_semestre Int       @id @default(autoincrement())
+  numero      Int?
+  fk_pregrado Int?
+  pregrado    pregrado? @relation(fields: [fk_pregrado], references: [pk_pregrado], onDelete: Restrict, onUpdate: Restrict, map: "semestre_ibfk_1")
+
+  @@index([fk_pregrado], map: "fk_pregrado")
+}
+
+model tipo_status {
+  pk_status     Int     @id @default(autoincrement())
+  nombre_status String? @db.VarChar(50)
+}
