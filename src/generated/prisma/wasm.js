@@ -309,7 +309,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\Users\\a\\Desktop\\ProyectoOpenSource\\src\\generated\\prisma",
+      "value": "/home/cimpas23/Documents/ProyectoMateria/OpenSource/src/generated/prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -318,16 +318,16 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "windows",
+        "value": "rhel-openssl-3.0.x",
         "native": true
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "C:\\Users\\a\\Desktop\\ProyectoOpenSource\\src\\prisma\\schema.prisma",
+    "sourceFilePath": "/home/cimpas23/Documents/ProyectoMateria/OpenSource/src/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": "../../../.env"
+    "rootEnvPath": null
   },
   "relativePath": "../../prisma",
   "clientVersion": "6.17.1",
