@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient } from "../generated/prisma/index.js";
 const prisma = new PrismaClient();
 
 export const DatosService = {
@@ -7,7 +7,7 @@ export const DatosService = {
   },
 
   async findById(id) {
-    return prisma.datos.findUnique({ where: { id: Number(id) } });
+    return prisma.datos.findUnique({ where: { pk_dato: Number(id) } });
   },
 
   async create(data) {
@@ -16,12 +16,12 @@ export const DatosService = {
 
   async update(id, data) {
     return prisma.datos.update({
-      where: { id: Number(id) },
+      where: { pk_dato: Number(id) },
       data,
     });
   },
 
   async remove(id) {
-    return prisma.datos.delete({ where: { id: Number(id) } });
+    return prisma.datos.delete({ where: { pk_dato: Number(id) } });
   },
 };
