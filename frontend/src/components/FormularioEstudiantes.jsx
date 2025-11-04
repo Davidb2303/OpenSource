@@ -13,6 +13,12 @@ const FormularioEstudiante = () => {
     fk_id_tipo_status: '',
     correo: '',
     telefono: '',
+    // Campos de asignación de salón/horario (solo UI)
+    asignatura: '',
+    salon: '',
+    dia: '',
+    hora_inicio: '',
+    hora_fin: '',
   });
 
   const [loading, setLoading] = useState(false);
@@ -32,17 +38,31 @@ const FormularioEstudiante = () => {
     setMessage({ type: '', text: '' });
 
     try {
+      // Validar datos requeridos
+      if (!formData.nombre || !formData.apellido) {
+        throw new Error('Nombre y apellido son requeridos');
+      }
+
+      if (!formData.fk_id_gene || !formData.fk_id_doc || !formData.fk_id_civil) {
+        throw new Error('Género, Tipo Documento y Estado Civil son requeridos');
+      }
+
       const nuevoEstudiante = {
         nombre: formData.nombre,
         apellido: formData.apellido,
-        fk_id_doc: parseInt(formData.fk_id_doc) || null,
-        fk_id_civil: parseInt(formData.fk_id_civil) || null,
-        fk_id_gene: parseInt(formData.fk_id_gene) || null,
-        fk_pregrado: parseInt(formData.fk_pregrado) || null,
-        fk_id_semestre: parseInt(formData.fk_id_semestre) || null,
-        fk_id_tipo_status: parseInt(formData.fk_id_tipo_status) || null,
-        correo: formData.correo,
-        telefono: formData.telefono,
+        fk_id_doc: parseInt(formData.fk_id_doc),
+        fk_id_civil: parseInt(formData.fk_id_civil),
+        fk_id_gene: parseInt(formData.fk_id_gene),
+        fk_pregrado: formData.fk_pregrado ? parseInt(formData.fk_pregrado) : null,
+        fk_id_semestre: formData.fk_id_semestre ? parseInt(formData.fk_id_semestre) : null,
+        fk_id_tipo_status: formData.fk_id_tipo_status ? parseInt(formData.fk_id_tipo_status) : null,
+        correo: formData.correo || null,
+        telefono: formData.telefono || null,
+        asignatura: formData.asignatura || null,
+        salon: formData.salon || null,
+        dia: formData.dia || null,
+        hora_inicio: formData.hora_inicio || null,
+        hora_fin: formData.hora_fin || null,
       };
 
       await estudiantesService.create(nuevoEstudiante);
@@ -59,6 +79,11 @@ const FormularioEstudiante = () => {
         fk_id_tipo_status: '',
         correo: '',
         telefono: '',
+        asignatura: '',
+        salon: '',
+        dia: '',
+        hora_inicio: '',
+        hora_fin: '',
       });
     } catch (error) {
       console.error('Error al guardar estudiante:', error);
@@ -119,6 +144,12 @@ const FormularioEstudiante = () => {
         {/* INFORMACIÓN ACADÉMICA */}
         <div className="section">
           <h2>🏫 Información Académica</h2>
+          <label>Asignatura:</label>
+          <input type="text" name="asignatura" value={formData.asignatura} onChange={handleChange} placeholder="Ej: Física I" />
+
+          <label>Salón / Aula:</label>
+          <input type="text" name="salon" value={formData.salon} onChange={handleChange} placeholder="Ej: 306 T IND" />
+
           <label>Pregrado:</label>
           <select name="fk_pregrado" value={formData.fk_pregrado} onChange={handleChange}>
             <option value="">Seleccione...</option>
@@ -144,6 +175,25 @@ const FormularioEstudiante = () => {
             <option value="1">Activo</option>
             <option value="2">Inactivo</option>
           </select>
+
+          <div className="subsection">
+            <h3>Horario de la clase</h3>
+            <label>Día:</label>
+            <select name="dia" value={formData.dia} onChange={handleChange}>
+              <option value="">Seleccione...</option>
+              <option value="LUNES">Lunes</option>
+              <option value="MARTES">Martes</option>
+              <option value="MIERCOLES">Miércoles</option>
+              <option value="JUEVES">Jueves</option>
+              <option value="VIERNES">Viernes</option>
+            </select>
+
+            <label>Hora inicio:</label>
+            <input type="time" name="hora_inicio" value={formData.hora_inicio} onChange={handleChange} />
+
+            <label>Hora fin:</label>
+            <input type="time" name="hora_fin" value={formData.hora_fin} onChange={handleChange} />
+          </div>
         </div>
 
         {/* CONTACTO */}

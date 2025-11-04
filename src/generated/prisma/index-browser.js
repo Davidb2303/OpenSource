@@ -163,7 +163,17 @@ exports.Prisma.DatosScalarFieldEnum = {
   apellido: 'apellido',
   fk_id_doc: 'fk_id_doc',
   fk_id_civil: 'fk_id_civil',
-  fk_id_gene: 'fk_id_gene'
+  fk_id_gene: 'fk_id_gene',
+  correo: 'correo',
+  telefono: 'telefono',
+  fk_pregrado: 'fk_pregrado',
+  fk_id_semestre: 'fk_id_semestre',
+  fk_id_tipo_status: 'fk_id_tipo_status',
+  asignatura: 'asignatura',
+  salon: 'salon',
+  dia: 'dia',
+  hora_inicio: 'hora_inicio',
+  hora_fin: 'hora_fin'
 };
 
 exports.Prisma.DocumentoScalarFieldEnum = {
@@ -270,7 +280,14 @@ exports.Prisma.civilOrderByRelevanceFieldEnum = {
 
 exports.Prisma.datosOrderByRelevanceFieldEnum = {
   nombre: 'nombre',
-  apellido: 'apellido'
+  apellido: 'apellido',
+  correo: 'correo',
+  telefono: 'telefono',
+  asignatura: 'asignatura',
+  salon: 'salon',
+  dia: 'dia',
+  hora_inicio: 'hora_inicio',
+  hora_fin: 'hora_fin'
 };
 
 exports.Prisma.documentoOrderByRelevanceFieldEnum = {

@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import datosRoutes from "./routes/datos.routes.js";
 import estudiantesRoutes from "./routes/estudiantes.routes.js";
+import exportRoutes from "./routes/export.routes.js";
 
 const app = express();
 
@@ -16,5 +17,6 @@ app.use(cors({
 app.use(express.json());
 app.use("/api/datos", datosRoutes);
 app.use("/api/estudiantes", estudiantesRoutes);
+app.use("/api/export", exportRoutes);
 
 export default app;

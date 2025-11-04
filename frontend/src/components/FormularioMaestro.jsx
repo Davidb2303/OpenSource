@@ -55,13 +55,22 @@ const FormularioMaestro = () => {
     setMessage({ type: '', text: '' });
 
     try {
+      // Validar datos requeridos
+      if (!formData.primer_nombre || !formData.primer_apellido) {
+        throw new Error('Nombre y apellido son requeridos');
+      }
+
+      if (!formData.fk_id_gene || !formData.fk_id_doc || !formData.fk_id_civil) {
+        throw new Error('Género, Tipo Documento y Estado Civil son requeridos');
+      }
+
       // Preparar los datos básicos para el modelo datos (según el schema de Prisma)
       const datosBasicos = {
         nombre: formData.primer_nombre,
         apellido: formData.primer_apellido,
-        fk_id_doc: formData.fk_id_doc ? parseInt(formData.fk_id_doc) : null,
-        fk_id_civil: formData.fk_id_civil ? parseInt(formData.fk_id_civil) : null,
-        fk_id_gene: formData.fk_id_gene ? parseInt(formData.fk_id_gene) : null
+        fk_id_doc: parseInt(formData.fk_id_doc),
+        fk_id_civil: parseInt(formData.fk_id_civil),
+        fk_id_gene: parseInt(formData.fk_id_gene)
       };
 
       await datosService.create(datosBasicos);

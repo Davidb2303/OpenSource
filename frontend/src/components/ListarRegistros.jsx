@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { datosService } from '../services/datosService';
+﻿import React, { useState, useEffect } from "react";
+import { datosService } from "../services/datosService";
+import { exportService } from "../services/exportService";
 
 const ListarRegistros = () => {
   const [registros, setRegistros] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [editingId, setEditingId] = useState(null);
   const [editData, setEditData] = useState({});
+  const [exportLoading, setExportLoading] = useState(false);
 
   useEffect(() => {
     cargarRegistros();
@@ -17,24 +19,24 @@ const ListarRegistros = () => {
       setLoading(true);
       const data = await datosService.getAll();
       setRegistros(data);
-      setError('');
+      setError("");
     } catch (error) {
-      console.error('Error al cargar registros:', error);
-      setError('Error al cargar los registros');
+      console.error("Error al cargar registros:", error);
+      setError("Error al cargar los registros");
     } finally {
       setLoading(false);
     }
   };
 
   const handleEliminar = async (id) => {
-    if (window.confirm('¿Estás seguro de que quieres eliminar este registro?')) {
+    if (window.confirm("¿Estás seguro de que quieres eliminar este registro?")) {
       try {
         await datosService.delete(id);
-        setRegistros(registros.filter(registro => registro.pk_dato !== id));
-        alert('✅ Registro eliminado exitosamente');
+        setRegistros(registros.filter((registro) => registro.pk_dato !== id));
+        alert(" Registro eliminado exitosamente");
       } catch (error) {
-        console.error('Error al eliminar:', error);
-        alert('❌ Error al eliminar el registro');
+        console.error("Error al eliminar:", error);
+        alert(" Error al eliminar el registro");
       }
     }
   };
@@ -42,11 +44,11 @@ const ListarRegistros = () => {
   const handleEditar = (registro) => {
     setEditingId(registro.pk_dato);
     setEditData({
-      nombre: registro.nombre || '',
-      apellido: registro.apellido || '',
-      fk_id_doc: registro.fk_id_doc || '',
-      fk_id_civil: registro.fk_id_civil || '',
-      fk_id_gene: registro.fk_id_gene || ''
+      nombre: registro.nombre || "",
+      apellido: registro.apellido || "",
+      fk_id_doc: registro.fk_id_doc || "",
+      fk_id_civil: registro.fk_id_civil || "",
+      fk_id_gene: registro.fk_id_gene || "",
     });
   };
 
@@ -58,47 +60,45 @@ const ListarRegistros = () => {
   const handleGuardarEdicion = async (id) => {
     try {
       const registroActualizado = await datosService.update(id, editData);
-      setRegistros(registros.map(registro => 
-        registro.pk_dato === id ? { ...registro, ...registroActualizado } : registro
-      ));
+      setRegistros(
+        registros.map((registro) =>
+          registro.pk_dato === id ? { ...registro, ...registroActualizado } : registro
+        )
+      );
       setEditingId(null);
       setEditData({});
-      alert('✅ Registro actualizado exitosamente');
+      alert(" Registro actualizado exitosamente");
     } catch (error) {
-      console.error('Error al actualizar:', error);
-      alert('❌ Error al actualizar el registro');
+      console.error("Error al actualizar:", error);
+      alert(" Error al actualizar el registro");
     }
   };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setEditData(prev => ({
+    setEditData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
-  const exportarExcel = () => {
-    // Simulación de exportación a Excel (en un proyecto real usarías una librería como xlsx)
-    const csvContent = "data:text/csv;charset=utf-8," 
-      + "ID,Nombre,Apellido,Documento,Estado Civil,Género\n"
-      + registros.map(registro => 
-          `${registro.pk_dato},"${registro.nombre}","${registro.apellido}",${registro.fk_id_doc},${registro.fk_id_civil},${registro.fk_id_gene}`
-        ).join("\n");
-    
-    const encodedUri = encodeURI(csvContent);
-    const link = document.createElement("a");
-    link.setAttribute("href", encodedUri);
-    link.setAttribute("download", "registros_academicos.csv");
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const handleExportarExcel = async () => {
+    try {
+      setExportLoading(true);
+      await exportService.downloadExcel(registros);
+      alert("✅ Archivo Excel descargado correctamente con toda la información");
+    } catch (error) {
+      console.error("Error al exportar:", error);
+      alert("❌ Error al descargar el archivo Excel");
+    } finally {
+      setExportLoading(false);
+    }
   };
 
   if (loading) {
     return (
       <div className="loading-container">
-        <div className="loading-spinner">⏳</div>
+        <div className="loading-spinner"></div>
         <p>Cargando registros...</p>
       </div>
     );
@@ -109,20 +109,21 @@ const ListarRegistros = () => {
       <div className="header-section">
         <h1>📋 Todos los Registros Académicos</h1>
         <div className="action-buttons">
-          <button onClick={cargarRegistros} className="refresh-button">
+          <button onClick={cargarRegistros} className="refresh-button" title="Actualizar lista">
             🔄 Actualizar
           </button>
-          <button onClick={exportarExcel} className="export-button">
-            📊 Descargar CSV
+          <button
+            onClick={handleExportarExcel}
+            className="export-button"
+            disabled={exportLoading || registros.length === 0}
+            title="Descargar reporte completo en Excel"
+          >
+            {exportLoading ? "⏳ Descargando..." : "📊 Exportar Todo"}
           </button>
         </div>
       </div>
 
-      {error && (
-        <div className="error-message">
-          ❌ {error}
-        </div>
-      )}
+      {error && <div className="error-message">❌ {error}</div>}
 
       {registros.length === 0 ? (
         <div className="no-records">
@@ -157,7 +158,7 @@ const ListarRegistros = () => {
                         className="edit-input"
                       />
                     ) : (
-                      registro.nombre || 'N/A'
+                      registro.nombre || "N/A"
                     )}
                   </td>
                   <td>
@@ -170,7 +171,7 @@ const ListarRegistros = () => {
                         className="edit-input"
                       />
                     ) : (
-                      registro.apellido || 'N/A'
+                      registro.apellido || "N/A"
                     )}
                   </td>
                   <td>
@@ -188,18 +189,16 @@ const ListarRegistros = () => {
                         <option value="4">NIT</option>
                         <option value="5">Cédula de Extranjería</option>
                       </select>
-                    ) : (
-                      (() => {
-                        const docTypes = {
-                          1: 'Cédula de Ciudadanía',
-                          2: 'Tarjeta de Identidad',
-                          3: 'Pasaporte',
-                          4: 'NIT',
-                          5: 'Cédula de Extranjería'
-                        };
-                        return docTypes[registro.fk_id_doc] || 'N/A';
-                      })()
-                    )}
+                    ) : (() => {
+                      const docTypes = {
+                        1: "Cédula de Ciudadanía",
+                        2: "Tarjeta de Identidad",
+                        3: "Pasaporte",
+                        4: "NIT",
+                        5: "Cédula de Extranjería",
+                      };
+                      return docTypes[registro.fk_id_doc] || "N/A";
+                    })()}
                   </td>
                   <td>
                     {editingId === registro.pk_dato ? (
@@ -216,18 +215,16 @@ const ListarRegistros = () => {
                         <option value="4">Separado(a)</option>
                         <option value="5">Unión Libre</option>
                       </select>
-                    ) : (
-                      (() => {
-                        const civilTypes = {
-                          1: 'Casado(a)',
-                          2: 'Soltero(a)',
-                          3: 'Viudo(a)',
-                          4: 'Separado(a)',
-                          5: 'Unión Libre'
-                        };
-                        return civilTypes[registro.fk_id_civil] || 'N/A';
-                      })()
-                    )}
+                    ) : (() => {
+                      const civilTypes = {
+                        1: "Casado(a)",
+                        2: "Soltero(a)",
+                        3: "Viudo(a)",
+                        4: "Separado(a)",
+                        5: "Unión Libre",
+                      };
+                      return civilTypes[registro.fk_id_civil] || "N/A";
+                    })()}
                   </td>
                   <td>
                     {editingId === registro.pk_dato ? (
@@ -242,16 +239,14 @@ const ListarRegistros = () => {
                         <option value="2">Femenino</option>
                         <option value="3">Otro</option>
                       </select>
-                    ) : (
-                      (() => {
-                        const genderTypes = {
-                          1: 'Masculino',
-                          2: 'Femenino',
-                          3: 'Otro'
-                        };
-                        return genderTypes[registro.fk_id_gene] || 'N/A';
-                      })()
-                    )}
+                    ) : (() => {
+                      const genderTypes = {
+                        1: "Masculino",
+                        2: "Femenino",
+                        3: "Otro",
+                      };
+                      return genderTypes[registro.fk_id_gene] || "N/A";
+                    })()}
                   </td>
                   <td>
                     <div className="action-buttons-cell">
@@ -279,14 +274,14 @@ const ListarRegistros = () => {
                             className="edit-button"
                             title="Editar registro"
                           >
-                            ✏️
+                            
                           </button>
                           <button
                             onClick={() => handleEliminar(registro.pk_dato)}
                             className="delete-button"
                             title="Eliminar registro"
                           >
-                            🗑️
+                            
                           </button>
                         </>
                       )}
@@ -300,7 +295,7 @@ const ListarRegistros = () => {
       )}
 
       <div className="summary-section">
-        <p>📊 Total de registros: <strong>{registros.length}</strong></p>
+        <p> Total de registros: <strong>{registros.length}</strong></p>
       </div>
     </div>
   );

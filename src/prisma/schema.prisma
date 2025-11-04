@@ -56,19 +56,35 @@ model civil {
 }
 
 model datos {
-  pk_dato     Int        @id @default(autoincrement())
-  nombre      String?    @db.VarChar(50)
-  apellido    String?    @db.VarChar(50)
-  fk_id_doc   Int?
-  fk_id_civil Int?
-  fk_id_gene  Int?
-  documento   documento? @relation(fields: [fk_id_doc], references: [pk_id_doc], onDelete: Restrict, onUpdate: Restrict, map: "datos_ibfk_1")
-  civil       civil?     @relation(fields: [fk_id_civil], references: [pk_id_civil], onDelete: Restrict, onUpdate: Restrict, map: "datos_ibfk_2")
-  genero      genero?    @relation(fields: [fk_id_gene], references: [pk_id_gene], onDelete: Restrict, onUpdate: Restrict, map: "datos_ibfk_3")
+  pk_dato            Int            @id @default(autoincrement())
+  nombre             String?        @db.VarChar(50)
+  apellido           String?        @db.VarChar(50)
+  fk_id_doc          Int?
+  fk_id_civil        Int?
+  fk_id_gene         Int?
+  correo             String?        @db.VarChar(100)
+  telefono           String?        @db.VarChar(20)
+  fk_pregrado        Int?
+  fk_id_semestre     Int?
+  fk_id_tipo_status  Int?
+  asignatura         String?        @db.VarChar(100)
+  salon              String?        @db.VarChar(50)
+  dia                String?        @db.VarChar(20)
+  hora_inicio        String?        @db.VarChar(10)
+  hora_fin           String?        @db.VarChar(10)
+  documento          documento?     @relation(fields: [fk_id_doc], references: [pk_id_doc], onDelete: Restrict, onUpdate: Restrict, map: "datos_ibfk_1")
+  civil              civil?         @relation(fields: [fk_id_civil], references: [pk_id_civil], onDelete: Restrict, onUpdate: Restrict, map: "datos_ibfk_2")
+  genero             genero?        @relation(fields: [fk_id_gene], references: [pk_id_gene], onDelete: Restrict, onUpdate: Restrict, map: "datos_ibfk_3")
+  pregrado           pregrado?      @relation(fields: [fk_pregrado], references: [pk_pregrado], onDelete: Restrict, onUpdate: Restrict, map: "datos_ibfk_4")
+  semestre           semestre?      @relation(fields: [fk_id_semestre], references: [pk_semestre], onDelete: Restrict, onUpdate: Restrict, map: "datos_ibfk_5")
+  tipo_status        tipo_status?   @relation(fields: [fk_id_tipo_status], references: [pk_status], onDelete: Restrict, onUpdate: Restrict, map: "datos_ibfk_6")
 
   @@index([fk_id_civil], map: "fk_id_civil")
   @@index([fk_id_doc], map: "fk_id_doc")
   @@index([fk_id_gene], map: "fk_id_gene")
+  @@index([fk_pregrado], map: "fk_pregrado")
+  @@index([fk_id_semestre], map: "fk_id_semestre")
+  @@index([fk_id_tipo_status], map: "fk_id_tipo_status")
 }
 
 model documento {
@@ -138,6 +154,7 @@ model pregrado {
   nombre_pregrado String?       @db.VarChar(100)
   preofe_mate     preofe_mate[]
   semestre        semestre[]
+  datos           datos[]
 }
 
 model preofe_mate {
@@ -156,6 +173,7 @@ model semestre {
   numero      Int?
   fk_pregrado Int?
   pregrado    pregrado? @relation(fields: [fk_pregrado], references: [pk_pregrado], onDelete: Restrict, onUpdate: Restrict, map: "semestre_ibfk_1")
+  datos       datos[]
 
   @@index([fk_pregrado], map: "fk_pregrado")
 }
@@ -163,4 +181,5 @@ model semestre {
 model tipo_status {
   pk_status     Int     @id @default(autoincrement())
   nombre_status String? @db.VarChar(50)
+  datos         datos[]
 }

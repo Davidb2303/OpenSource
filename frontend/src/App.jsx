@@ -12,10 +12,9 @@ function App() {
         <header className="App-header">
           <h1>🎓 Sistema de Gestión Académica</h1>
           <nav>
-            <Link to="/" className="nav-link">📝 Nuevo Registro de Maestros</Link>
-            <Link to="/registros" className="nav-link">📋 Ver Registros</Link>
-            
-            <Link to="/registrosEst" className="nav-link">📋 Nuevo registro de Estudiantes</Link>
+            <Link to="/" className="nav-link">📝 Maestros</Link>
+            <Link to="/registrosEst" className="nav-link">�‍🎓 Estudiantes</Link>
+            <Link to="/registros" className="nav-link">📋 Registros</Link>
           </nav>
         </header>
         

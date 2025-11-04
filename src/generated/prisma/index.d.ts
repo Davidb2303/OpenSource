@@ -2540,11 +2540,13 @@ export namespace Prisma {
   export type PregradoCountOutputType = {
     preofe_mate: number
     semestre: number
+    datos: number
   }
 
   export type PregradoCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     preofe_mate?: boolean | PregradoCountOutputTypeCountPreofe_mateArgs
     semestre?: boolean | PregradoCountOutputTypeCountSemestreArgs
+    datos?: boolean | PregradoCountOutputTypeCountDatosArgs
   }
 
   // Custom InputTypes
@@ -2570,6 +2572,75 @@ export namespace Prisma {
    */
   export type PregradoCountOutputTypeCountSemestreArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: semestreWhereInput
+  }
+
+  /**
+   * PregradoCountOutputType without action
+   */
+  export type PregradoCountOutputTypeCountDatosArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: datosWhereInput
+  }
+
+
+  /**
+   * Count Type SemestreCountOutputType
+   */
+
+  export type SemestreCountOutputType = {
+    datos: number
+  }
+
+  export type SemestreCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    datos?: boolean | SemestreCountOutputTypeCountDatosArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * SemestreCountOutputType without action
+   */
+  export type SemestreCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SemestreCountOutputType
+     */
+    select?: SemestreCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * SemestreCountOutputType without action
+   */
+  export type SemestreCountOutputTypeCountDatosArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: datosWhereInput
+  }
+
+
+  /**
+   * Count Type Tipo_statusCountOutputType
+   */
+
+  export type Tipo_statusCountOutputType = {
+    datos: number
+  }
+
+  export type Tipo_statusCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    datos?: boolean | Tipo_statusCountOutputTypeCountDatosArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * Tipo_statusCountOutputType without action
+   */
+  export type Tipo_statusCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Tipo_statusCountOutputType
+     */
+    select?: Tipo_statusCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * Tipo_statusCountOutputType without action
+   */
+  export type Tipo_statusCountOutputTypeCountDatosArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: datosWhereInput
   }
 
 
@@ -8317,6 +8388,9 @@ export namespace Prisma {
     fk_id_doc: number | null
     fk_id_civil: number | null
     fk_id_gene: number | null
+    fk_pregrado: number | null
+    fk_id_semestre: number | null
+    fk_id_tipo_status: number | null
   }
 
   export type DatosSumAggregateOutputType = {
@@ -8324,6 +8398,9 @@ export namespace Prisma {
     fk_id_doc: number | null
     fk_id_civil: number | null
     fk_id_gene: number | null
+    fk_pregrado: number | null
+    fk_id_semestre: number | null
+    fk_id_tipo_status: number | null
   }
 
   export type DatosMinAggregateOutputType = {
@@ -8333,6 +8410,16 @@ export namespace Prisma {
     fk_id_doc: number | null
     fk_id_civil: number | null
     fk_id_gene: number | null
+    correo: string | null
+    telefono: string | null
+    fk_pregrado: number | null
+    fk_id_semestre: number | null
+    fk_id_tipo_status: number | null
+    asignatura: string | null
+    salon: string | null
+    dia: string | null
+    hora_inicio: string | null
+    hora_fin: string | null
   }
 
   export type DatosMaxAggregateOutputType = {
@@ -8342,6 +8429,16 @@ export namespace Prisma {
     fk_id_doc: number | null
     fk_id_civil: number | null
     fk_id_gene: number | null
+    correo: string | null
+    telefono: string | null
+    fk_pregrado: number | null
+    fk_id_semestre: number | null
+    fk_id_tipo_status: number | null
+    asignatura: string | null
+    salon: string | null
+    dia: string | null
+    hora_inicio: string | null
+    hora_fin: string | null
   }
 
   export type DatosCountAggregateOutputType = {
@@ -8351,6 +8448,16 @@ export namespace Prisma {
     fk_id_doc: number
     fk_id_civil: number
     fk_id_gene: number
+    correo: number
+    telefono: number
+    fk_pregrado: number
+    fk_id_semestre: number
+    fk_id_tipo_status: number
+    asignatura: number
+    salon: number
+    dia: number
+    hora_inicio: number
+    hora_fin: number
     _all: number
   }
 
@@ -8360,6 +8467,9 @@ export namespace Prisma {
     fk_id_doc?: true
     fk_id_civil?: true
     fk_id_gene?: true
+    fk_pregrado?: true
+    fk_id_semestre?: true
+    fk_id_tipo_status?: true
   }
 
   export type DatosSumAggregateInputType = {
@@ -8367,6 +8477,9 @@ export namespace Prisma {
     fk_id_doc?: true
     fk_id_civil?: true
     fk_id_gene?: true
+    fk_pregrado?: true
+    fk_id_semestre?: true
+    fk_id_tipo_status?: true
   }
 
   export type DatosMinAggregateInputType = {
@@ -8376,6 +8489,16 @@ export namespace Prisma {
     fk_id_doc?: true
     fk_id_civil?: true
     fk_id_gene?: true
+    correo?: true
+    telefono?: true
+    fk_pregrado?: true
+    fk_id_semestre?: true
+    fk_id_tipo_status?: true
+    asignatura?: true
+    salon?: true
+    dia?: true
+    hora_inicio?: true
+    hora_fin?: true
   }
 
   export type DatosMaxAggregateInputType = {
@@ -8385,6 +8508,16 @@ export namespace Prisma {
     fk_id_doc?: true
     fk_id_civil?: true
     fk_id_gene?: true
+    correo?: true
+    telefono?: true
+    fk_pregrado?: true
+    fk_id_semestre?: true
+    fk_id_tipo_status?: true
+    asignatura?: true
+    salon?: true
+    dia?: true
+    hora_inicio?: true
+    hora_fin?: true
   }
 
   export type DatosCountAggregateInputType = {
@@ -8394,6 +8527,16 @@ export namespace Prisma {
     fk_id_doc?: true
     fk_id_civil?: true
     fk_id_gene?: true
+    correo?: true
+    telefono?: true
+    fk_pregrado?: true
+    fk_id_semestre?: true
+    fk_id_tipo_status?: true
+    asignatura?: true
+    salon?: true
+    dia?: true
+    hora_inicio?: true
+    hora_fin?: true
     _all?: true
   }
 
@@ -8490,6 +8633,16 @@ export namespace Prisma {
     fk_id_doc: number | null
     fk_id_civil: number | null
     fk_id_gene: number | null
+    correo: string | null
+    telefono: string | null
+    fk_pregrado: number | null
+    fk_id_semestre: number | null
+    fk_id_tipo_status: number | null
+    asignatura: string | null
+    salon: string | null
+    dia: string | null
+    hora_inicio: string | null
+    hora_fin: string | null
     _count: DatosCountAggregateOutputType | null
     _avg: DatosAvgAggregateOutputType | null
     _sum: DatosSumAggregateOutputType | null
@@ -8518,9 +8671,22 @@ export namespace Prisma {
     fk_id_doc?: boolean
     fk_id_civil?: boolean
     fk_id_gene?: boolean
+    correo?: boolean
+    telefono?: boolean
+    fk_pregrado?: boolean
+    fk_id_semestre?: boolean
+    fk_id_tipo_status?: boolean
+    asignatura?: boolean
+    salon?: boolean
+    dia?: boolean
+    hora_inicio?: boolean
+    hora_fin?: boolean
     documento?: boolean | datos$documentoArgs<ExtArgs>
     civil?: boolean | datos$civilArgs<ExtArgs>
     genero?: boolean | datos$generoArgs<ExtArgs>
+    pregrado?: boolean | datos$pregradoArgs<ExtArgs>
+    semestre?: boolean | datos$semestreArgs<ExtArgs>
+    tipo_status?: boolean | datos$tipo_statusArgs<ExtArgs>
   }, ExtArgs["result"]["datos"]>
 
 
@@ -8532,13 +8698,26 @@ export namespace Prisma {
     fk_id_doc?: boolean
     fk_id_civil?: boolean
     fk_id_gene?: boolean
+    correo?: boolean
+    telefono?: boolean
+    fk_pregrado?: boolean
+    fk_id_semestre?: boolean
+    fk_id_tipo_status?: boolean
+    asignatura?: boolean
+    salon?: boolean
+    dia?: boolean
+    hora_inicio?: boolean
+    hora_fin?: boolean
   }
 
-  export type datosOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"pk_dato" | "nombre" | "apellido" | "fk_id_doc" | "fk_id_civil" | "fk_id_gene", ExtArgs["result"]["datos"]>
+  export type datosOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"pk_dato" | "nombre" | "apellido" | "fk_id_doc" | "fk_id_civil" | "fk_id_gene" | "correo" | "telefono" | "fk_pregrado" | "fk_id_semestre" | "fk_id_tipo_status" | "asignatura" | "salon" | "dia" | "hora_inicio" | "hora_fin", ExtArgs["result"]["datos"]>
   export type datosInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     documento?: boolean | datos$documentoArgs<ExtArgs>
     civil?: boolean | datos$civilArgs<ExtArgs>
     genero?: boolean | datos$generoArgs<ExtArgs>
+    pregrado?: boolean | datos$pregradoArgs<ExtArgs>
+    semestre?: boolean | datos$semestreArgs<ExtArgs>
+    tipo_status?: boolean | datos$tipo_statusArgs<ExtArgs>
   }
 
   export type $datosPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -8547,6 +8726,9 @@ export namespace Prisma {
       documento: Prisma.$documentoPayload<ExtArgs> | null
       civil: Prisma.$civilPayload<ExtArgs> | null
       genero: Prisma.$generoPayload<ExtArgs> | null
+      pregrado: Prisma.$pregradoPayload<ExtArgs> | null
+      semestre: Prisma.$semestrePayload<ExtArgs> | null
+      tipo_status: Prisma.$tipo_statusPayload<ExtArgs> | null
     }
     scalars: $Extensions.GetPayloadResult<{
       pk_dato: number
@@ -8555,6 +8737,16 @@ export namespace Prisma {
       fk_id_doc: number | null
       fk_id_civil: number | null
       fk_id_gene: number | null
+      correo: string | null
+      telefono: string | null
+      fk_pregrado: number | null
+      fk_id_semestre: number | null
+      fk_id_tipo_status: number | null
+      asignatura: string | null
+      salon: string | null
+      dia: string | null
+      hora_inicio: string | null
+      hora_fin: string | null
     }, ExtArgs["result"]["datos"]>
     composites: {}
   }
@@ -8898,6 +9090,9 @@ export namespace Prisma {
     documento<T extends datos$documentoArgs<ExtArgs> = {}>(args?: Subset<T, datos$documentoArgs<ExtArgs>>): Prisma__documentoClient<$Result.GetResult<Prisma.$documentoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     civil<T extends datos$civilArgs<ExtArgs> = {}>(args?: Subset<T, datos$civilArgs<ExtArgs>>): Prisma__civilClient<$Result.GetResult<Prisma.$civilPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     genero<T extends datos$generoArgs<ExtArgs> = {}>(args?: Subset<T, datos$generoArgs<ExtArgs>>): Prisma__generoClient<$Result.GetResult<Prisma.$generoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    pregrado<T extends datos$pregradoArgs<ExtArgs> = {}>(args?: Subset<T, datos$pregradoArgs<ExtArgs>>): Prisma__pregradoClient<$Result.GetResult<Prisma.$pregradoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    semestre<T extends datos$semestreArgs<ExtArgs> = {}>(args?: Subset<T, datos$semestreArgs<ExtArgs>>): Prisma__semestreClient<$Result.GetResult<Prisma.$semestrePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    tipo_status<T extends datos$tipo_statusArgs<ExtArgs> = {}>(args?: Subset<T, datos$tipo_statusArgs<ExtArgs>>): Prisma__tipo_statusClient<$Result.GetResult<Prisma.$tipo_statusPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -8933,6 +9128,16 @@ export namespace Prisma {
     readonly fk_id_doc: FieldRef<"datos", 'Int'>
     readonly fk_id_civil: FieldRef<"datos", 'Int'>
     readonly fk_id_gene: FieldRef<"datos", 'Int'>
+    readonly correo: FieldRef<"datos", 'String'>
+    readonly telefono: FieldRef<"datos", 'String'>
+    readonly fk_pregrado: FieldRef<"datos", 'Int'>
+    readonly fk_id_semestre: FieldRef<"datos", 'Int'>
+    readonly fk_id_tipo_status: FieldRef<"datos", 'Int'>
+    readonly asignatura: FieldRef<"datos", 'String'>
+    readonly salon: FieldRef<"datos", 'String'>
+    readonly dia: FieldRef<"datos", 'String'>
+    readonly hora_inicio: FieldRef<"datos", 'String'>
+    readonly hora_fin: FieldRef<"datos", 'String'>
   }
     
 
@@ -9330,6 +9535,63 @@ export namespace Prisma {
      */
     include?: generoInclude<ExtArgs> | null
     where?: generoWhereInput
+  }
+
+  /**
+   * datos.pregrado
+   */
+  export type datos$pregradoArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the pregrado
+     */
+    select?: pregradoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the pregrado
+     */
+    omit?: pregradoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: pregradoInclude<ExtArgs> | null
+    where?: pregradoWhereInput
+  }
+
+  /**
+   * datos.semestre
+   */
+  export type datos$semestreArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the semestre
+     */
+    select?: semestreSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the semestre
+     */
+    omit?: semestreOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: semestreInclude<ExtArgs> | null
+    where?: semestreWhereInput
+  }
+
+  /**
+   * datos.tipo_status
+   */
+  export type datos$tipo_statusArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tipo_status
+     */
+    select?: tipo_statusSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tipo_status
+     */
+    omit?: tipo_statusOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tipo_statusInclude<ExtArgs> | null
+    where?: tipo_statusWhereInput
   }
 
   /**
@@ -16388,6 +16650,7 @@ export namespace Prisma {
     nombre_pregrado?: boolean
     preofe_mate?: boolean | pregrado$preofe_mateArgs<ExtArgs>
     semestre?: boolean | pregrado$semestreArgs<ExtArgs>
+    datos?: boolean | pregrado$datosArgs<ExtArgs>
     _count?: boolean | PregradoCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["pregrado"]>
 
@@ -16402,6 +16665,7 @@ export namespace Prisma {
   export type pregradoInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     preofe_mate?: boolean | pregrado$preofe_mateArgs<ExtArgs>
     semestre?: boolean | pregrado$semestreArgs<ExtArgs>
+    datos?: boolean | pregrado$datosArgs<ExtArgs>
     _count?: boolean | PregradoCountOutputTypeDefaultArgs<ExtArgs>
   }
 
@@ -16410,6 +16674,7 @@ export namespace Prisma {
     objects: {
       preofe_mate: Prisma.$preofe_matePayload<ExtArgs>[]
       semestre: Prisma.$semestrePayload<ExtArgs>[]
+      datos: Prisma.$datosPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       pk_pregrado: number
@@ -16756,6 +17021,7 @@ export namespace Prisma {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     preofe_mate<T extends pregrado$preofe_mateArgs<ExtArgs> = {}>(args?: Subset<T, pregrado$preofe_mateArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$preofe_matePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     semestre<T extends pregrado$semestreArgs<ExtArgs> = {}>(args?: Subset<T, pregrado$semestreArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$semestrePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    datos<T extends pregrado$datosArgs<ExtArgs> = {}>(args?: Subset<T, pregrado$datosArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$datosPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -17175,6 +17441,30 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: SemestreScalarFieldEnum | SemestreScalarFieldEnum[]
+  }
+
+  /**
+   * pregrado.datos
+   */
+  export type pregrado$datosArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the datos
+     */
+    select?: datosSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the datos
+     */
+    omit?: datosOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: datosInclude<ExtArgs> | null
+    where?: datosWhereInput
+    orderBy?: datosOrderByWithRelationInput | datosOrderByWithRelationInput[]
+    cursor?: datosWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: DatosScalarFieldEnum | DatosScalarFieldEnum[]
   }
 
   /**
@@ -18378,6 +18668,8 @@ export namespace Prisma {
     numero?: boolean
     fk_pregrado?: boolean
     pregrado?: boolean | semestre$pregradoArgs<ExtArgs>
+    datos?: boolean | semestre$datosArgs<ExtArgs>
+    _count?: boolean | SemestreCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["semestre"]>
 
 
@@ -18391,12 +18683,15 @@ export namespace Prisma {
   export type semestreOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"pk_semestre" | "numero" | "fk_pregrado", ExtArgs["result"]["semestre"]>
   export type semestreInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     pregrado?: boolean | semestre$pregradoArgs<ExtArgs>
+    datos?: boolean | semestre$datosArgs<ExtArgs>
+    _count?: boolean | SemestreCountOutputTypeDefaultArgs<ExtArgs>
   }
 
   export type $semestrePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "semestre"
     objects: {
       pregrado: Prisma.$pregradoPayload<ExtArgs> | null
+      datos: Prisma.$datosPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       pk_semestre: number
@@ -18743,6 +19038,7 @@ export namespace Prisma {
   export interface Prisma__semestreClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     pregrado<T extends semestre$pregradoArgs<ExtArgs> = {}>(args?: Subset<T, semestre$pregradoArgs<ExtArgs>>): Prisma__pregradoClient<$Result.GetResult<Prisma.$pregradoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    datos<T extends semestre$datosArgs<ExtArgs> = {}>(args?: Subset<T, semestre$datosArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$datosPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -19137,6 +19433,30 @@ export namespace Prisma {
   }
 
   /**
+   * semestre.datos
+   */
+  export type semestre$datosArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the datos
+     */
+    select?: datosSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the datos
+     */
+    omit?: datosOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: datosInclude<ExtArgs> | null
+    where?: datosWhereInput
+    orderBy?: datosOrderByWithRelationInput | datosOrderByWithRelationInput[]
+    cursor?: datosWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: DatosScalarFieldEnum | DatosScalarFieldEnum[]
+  }
+
+  /**
    * semestre without action
    */
   export type semestreDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -19329,6 +19649,8 @@ export namespace Prisma {
   export type tipo_statusSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     pk_status?: boolean
     nombre_status?: boolean
+    datos?: boolean | tipo_status$datosArgs<ExtArgs>
+    _count?: boolean | Tipo_statusCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["tipo_status"]>
 
 
@@ -19339,10 +19661,16 @@ export namespace Prisma {
   }
 
   export type tipo_statusOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"pk_status" | "nombre_status", ExtArgs["result"]["tipo_status"]>
+  export type tipo_statusInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    datos?: boolean | tipo_status$datosArgs<ExtArgs>
+    _count?: boolean | Tipo_statusCountOutputTypeDefaultArgs<ExtArgs>
+  }
 
   export type $tipo_statusPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "tipo_status"
-    objects: {}
+    objects: {
+      datos: Prisma.$datosPayload<ExtArgs>[]
+    }
     scalars: $Extensions.GetPayloadResult<{
       pk_status: number
       nombre_status: string | null
@@ -19686,6 +20014,7 @@ export namespace Prisma {
    */
   export interface Prisma__tipo_statusClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
+    datos<T extends tipo_status$datosArgs<ExtArgs> = {}>(args?: Subset<T, tipo_status$datosArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$datosPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -19734,6 +20063,10 @@ export namespace Prisma {
      */
     omit?: tipo_statusOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tipo_statusInclude<ExtArgs> | null
+    /**
      * Filter, which tipo_status to fetch.
      */
     where: tipo_statusWhereUniqueInput
@@ -19752,6 +20085,10 @@ export namespace Prisma {
      */
     omit?: tipo_statusOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tipo_statusInclude<ExtArgs> | null
+    /**
      * Filter, which tipo_status to fetch.
      */
     where: tipo_statusWhereUniqueInput
@@ -19769,6 +20106,10 @@ export namespace Prisma {
      * Omit specific fields from the tipo_status
      */
     omit?: tipo_statusOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tipo_statusInclude<ExtArgs> | null
     /**
      * Filter, which tipo_status to fetch.
      */
@@ -19818,6 +20159,10 @@ export namespace Prisma {
      */
     omit?: tipo_statusOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tipo_statusInclude<ExtArgs> | null
+    /**
      * Filter, which tipo_status to fetch.
      */
     where?: tipo_statusWhereInput
@@ -19866,6 +20211,10 @@ export namespace Prisma {
      */
     omit?: tipo_statusOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tipo_statusInclude<ExtArgs> | null
+    /**
      * Filter, which tipo_statuses to fetch.
      */
     where?: tipo_statusWhereInput
@@ -19909,6 +20258,10 @@ export namespace Prisma {
      */
     omit?: tipo_statusOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tipo_statusInclude<ExtArgs> | null
+    /**
      * The data needed to create a tipo_status.
      */
     data?: XOR<tipo_statusCreateInput, tipo_statusUncheckedCreateInput>
@@ -19937,6 +20290,10 @@ export namespace Prisma {
      * Omit specific fields from the tipo_status
      */
     omit?: tipo_statusOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tipo_statusInclude<ExtArgs> | null
     /**
      * The data needed to update a tipo_status.
      */
@@ -19978,6 +20335,10 @@ export namespace Prisma {
      */
     omit?: tipo_statusOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tipo_statusInclude<ExtArgs> | null
+    /**
      * The filter to search for the tipo_status to update in case it exists.
      */
     where: tipo_statusWhereUniqueInput
@@ -20004,6 +20365,10 @@ export namespace Prisma {
      */
     omit?: tipo_statusOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tipo_statusInclude<ExtArgs> | null
+    /**
      * Filter which tipo_status to delete.
      */
     where: tipo_statusWhereUniqueInput
@@ -20024,6 +20389,30 @@ export namespace Prisma {
   }
 
   /**
+   * tipo_status.datos
+   */
+  export type tipo_status$datosArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the datos
+     */
+    select?: datosSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the datos
+     */
+    omit?: datosOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: datosInclude<ExtArgs> | null
+    where?: datosWhereInput
+    orderBy?: datosOrderByWithRelationInput | datosOrderByWithRelationInput[]
+    cursor?: datosWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: DatosScalarFieldEnum | DatosScalarFieldEnum[]
+  }
+
+  /**
    * tipo_status without action
    */
   export type tipo_statusDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -20035,6 +20424,10 @@ export namespace Prisma {
      * Omit specific fields from the tipo_status
      */
     omit?: tipo_statusOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tipo_statusInclude<ExtArgs> | null
   }
 
 
@@ -20113,7 +20506,17 @@ export namespace Prisma {
     apellido: 'apellido',
     fk_id_doc: 'fk_id_doc',
     fk_id_civil: 'fk_id_civil',
-    fk_id_gene: 'fk_id_gene'
+    fk_id_gene: 'fk_id_gene',
+    correo: 'correo',
+    telefono: 'telefono',
+    fk_pregrado: 'fk_pregrado',
+    fk_id_semestre: 'fk_id_semestre',
+    fk_id_tipo_status: 'fk_id_tipo_status',
+    asignatura: 'asignatura',
+    salon: 'salon',
+    dia: 'dia',
+    hora_inicio: 'hora_inicio',
+    hora_fin: 'hora_fin'
   };
 
   export type DatosScalarFieldEnum = (typeof DatosScalarFieldEnum)[keyof typeof DatosScalarFieldEnum]
@@ -20280,7 +20683,14 @@ export namespace Prisma {
 
   export const datosOrderByRelevanceFieldEnum: {
     nombre: 'nombre',
-    apellido: 'apellido'
+    apellido: 'apellido',
+    correo: 'correo',
+    telefono: 'telefono',
+    asignatura: 'asignatura',
+    salon: 'salon',
+    dia: 'dia',
+    hora_inicio: 'hora_inicio',
+    hora_fin: 'hora_fin'
   };
 
   export type datosOrderByRelevanceFieldEnum = (typeof datosOrderByRelevanceFieldEnum)[keyof typeof datosOrderByRelevanceFieldEnum]
@@ -20681,9 +21091,22 @@ export namespace Prisma {
     fk_id_doc?: IntNullableFilter<"datos"> | number | null
     fk_id_civil?: IntNullableFilter<"datos"> | number | null
     fk_id_gene?: IntNullableFilter<"datos"> | number | null
+    correo?: StringNullableFilter<"datos"> | string | null
+    telefono?: StringNullableFilter<"datos"> | string | null
+    fk_pregrado?: IntNullableFilter<"datos"> | number | null
+    fk_id_semestre?: IntNullableFilter<"datos"> | number | null
+    fk_id_tipo_status?: IntNullableFilter<"datos"> | number | null
+    asignatura?: StringNullableFilter<"datos"> | string | null
+    salon?: StringNullableFilter<"datos"> | string | null
+    dia?: StringNullableFilter<"datos"> | string | null
+    hora_inicio?: StringNullableFilter<"datos"> | string | null
+    hora_fin?: StringNullableFilter<"datos"> | string | null
     documento?: XOR<DocumentoNullableScalarRelationFilter, documentoWhereInput> | null
     civil?: XOR<CivilNullableScalarRelationFilter, civilWhereInput> | null
     genero?: XOR<GeneroNullableScalarRelationFilter, generoWhereInput> | null
+    pregrado?: XOR<PregradoNullableScalarRelationFilter, pregradoWhereInput> | null
+    semestre?: XOR<SemestreNullableScalarRelationFilter, semestreWhereInput> | null
+    tipo_status?: XOR<Tipo_statusNullableScalarRelationFilter, tipo_statusWhereInput> | null
   }
 
   export type datosOrderByWithRelationInput = {
@@ -20693,9 +21116,22 @@ export namespace Prisma {
     fk_id_doc?: SortOrderInput | SortOrder
     fk_id_civil?: SortOrderInput | SortOrder
     fk_id_gene?: SortOrderInput | SortOrder
+    correo?: SortOrderInput | SortOrder
+    telefono?: SortOrderInput | SortOrder
+    fk_pregrado?: SortOrderInput | SortOrder
+    fk_id_semestre?: SortOrderInput | SortOrder
+    fk_id_tipo_status?: SortOrderInput | SortOrder
+    asignatura?: SortOrderInput | SortOrder
+    salon?: SortOrderInput | SortOrder
+    dia?: SortOrderInput | SortOrder
+    hora_inicio?: SortOrderInput | SortOrder
+    hora_fin?: SortOrderInput | SortOrder
     documento?: documentoOrderByWithRelationInput
     civil?: civilOrderByWithRelationInput
     genero?: generoOrderByWithRelationInput
+    pregrado?: pregradoOrderByWithRelationInput
+    semestre?: semestreOrderByWithRelationInput
+    tipo_status?: tipo_statusOrderByWithRelationInput
     _relevance?: datosOrderByRelevanceInput
   }
 
@@ -20709,9 +21145,22 @@ export namespace Prisma {
     fk_id_doc?: IntNullableFilter<"datos"> | number | null
     fk_id_civil?: IntNullableFilter<"datos"> | number | null
     fk_id_gene?: IntNullableFilter<"datos"> | number | null
+    correo?: StringNullableFilter<"datos"> | string | null
+    telefono?: StringNullableFilter<"datos"> | string | null
+    fk_pregrado?: IntNullableFilter<"datos"> | number | null
+    fk_id_semestre?: IntNullableFilter<"datos"> | number | null
+    fk_id_tipo_status?: IntNullableFilter<"datos"> | number | null
+    asignatura?: StringNullableFilter<"datos"> | string | null
+    salon?: StringNullableFilter<"datos"> | string | null
+    dia?: StringNullableFilter<"datos"> | string | null
+    hora_inicio?: StringNullableFilter<"datos"> | string | null
+    hora_fin?: StringNullableFilter<"datos"> | string | null
     documento?: XOR<DocumentoNullableScalarRelationFilter, documentoWhereInput> | null
     civil?: XOR<CivilNullableScalarRelationFilter, civilWhereInput> | null
     genero?: XOR<GeneroNullableScalarRelationFilter, generoWhereInput> | null
+    pregrado?: XOR<PregradoNullableScalarRelationFilter, pregradoWhereInput> | null
+    semestre?: XOR<SemestreNullableScalarRelationFilter, semestreWhereInput> | null
+    tipo_status?: XOR<Tipo_statusNullableScalarRelationFilter, tipo_statusWhereInput> | null
   }, "pk_dato">
 
   export type datosOrderByWithAggregationInput = {
@@ -20721,6 +21170,16 @@ export namespace Prisma {
     fk_id_doc?: SortOrderInput | SortOrder
     fk_id_civil?: SortOrderInput | SortOrder
     fk_id_gene?: SortOrderInput | SortOrder
+    correo?: SortOrderInput | SortOrder
+    telefono?: SortOrderInput | SortOrder
+    fk_pregrado?: SortOrderInput | SortOrder
+    fk_id_semestre?: SortOrderInput | SortOrder
+    fk_id_tipo_status?: SortOrderInput | SortOrder
+    asignatura?: SortOrderInput | SortOrder
+    salon?: SortOrderInput | SortOrder
+    dia?: SortOrderInput | SortOrder
+    hora_inicio?: SortOrderInput | SortOrder
+    hora_fin?: SortOrderInput | SortOrder
     _count?: datosCountOrderByAggregateInput
     _avg?: datosAvgOrderByAggregateInput
     _max?: datosMaxOrderByAggregateInput
@@ -20738,6 +21197,16 @@ export namespace Prisma {
     fk_id_doc?: IntNullableWithAggregatesFilter<"datos"> | number | null
     fk_id_civil?: IntNullableWithAggregatesFilter<"datos"> | number | null
     fk_id_gene?: IntNullableWithAggregatesFilter<"datos"> | number | null
+    correo?: StringNullableWithAggregatesFilter<"datos"> | string | null
+    telefono?: StringNullableWithAggregatesFilter<"datos"> | string | null
+    fk_pregrado?: IntNullableWithAggregatesFilter<"datos"> | number | null
+    fk_id_semestre?: IntNullableWithAggregatesFilter<"datos"> | number | null
+    fk_id_tipo_status?: IntNullableWithAggregatesFilter<"datos"> | number | null
+    asignatura?: StringNullableWithAggregatesFilter<"datos"> | string | null
+    salon?: StringNullableWithAggregatesFilter<"datos"> | string | null
+    dia?: StringNullableWithAggregatesFilter<"datos"> | string | null
+    hora_inicio?: StringNullableWithAggregatesFilter<"datos"> | string | null
+    hora_fin?: StringNullableWithAggregatesFilter<"datos"> | string | null
   }
 
   export type documentoWhereInput = {
@@ -21098,6 +21567,7 @@ export namespace Prisma {
     nombre_pregrado?: StringNullableFilter<"pregrado"> | string | null
     preofe_mate?: Preofe_mateListRelationFilter
     semestre?: SemestreListRelationFilter
+    datos?: DatosListRelationFilter
   }
 
   export type pregradoOrderByWithRelationInput = {
@@ -21105,6 +21575,7 @@ export namespace Prisma {
     nombre_pregrado?: SortOrderInput | SortOrder
     preofe_mate?: preofe_mateOrderByRelationAggregateInput
     semestre?: semestreOrderByRelationAggregateInput
+    datos?: datosOrderByRelationAggregateInput
     _relevance?: pregradoOrderByRelevanceInput
   }
 
@@ -21116,6 +21587,7 @@ export namespace Prisma {
     nombre_pregrado?: StringNullableFilter<"pregrado"> | string | null
     preofe_mate?: Preofe_mateListRelationFilter
     semestre?: SemestreListRelationFilter
+    datos?: DatosListRelationFilter
   }, "pk_pregrado">
 
   export type pregradoOrderByWithAggregationInput = {
@@ -21194,6 +21666,7 @@ export namespace Prisma {
     numero?: IntNullableFilter<"semestre"> | number | null
     fk_pregrado?: IntNullableFilter<"semestre"> | number | null
     pregrado?: XOR<PregradoNullableScalarRelationFilter, pregradoWhereInput> | null
+    datos?: DatosListRelationFilter
   }
 
   export type semestreOrderByWithRelationInput = {
@@ -21201,6 +21674,7 @@ export namespace Prisma {
     numero?: SortOrderInput | SortOrder
     fk_pregrado?: SortOrderInput | SortOrder
     pregrado?: pregradoOrderByWithRelationInput
+    datos?: datosOrderByRelationAggregateInput
   }
 
   export type semestreWhereUniqueInput = Prisma.AtLeast<{
@@ -21211,6 +21685,7 @@ export namespace Prisma {
     numero?: IntNullableFilter<"semestre"> | number | null
     fk_pregrado?: IntNullableFilter<"semestre"> | number | null
     pregrado?: XOR<PregradoNullableScalarRelationFilter, pregradoWhereInput> | null
+    datos?: DatosListRelationFilter
   }, "pk_semestre">
 
   export type semestreOrderByWithAggregationInput = {
@@ -21239,11 +21714,13 @@ export namespace Prisma {
     NOT?: tipo_statusWhereInput | tipo_statusWhereInput[]
     pk_status?: IntFilter<"tipo_status"> | number
     nombre_status?: StringNullableFilter<"tipo_status"> | string | null
+    datos?: DatosListRelationFilter
   }
 
   export type tipo_statusOrderByWithRelationInput = {
     pk_status?: SortOrder
     nombre_status?: SortOrderInput | SortOrder
+    datos?: datosOrderByRelationAggregateInput
     _relevance?: tipo_statusOrderByRelevanceInput
   }
 
@@ -21253,6 +21730,7 @@ export namespace Prisma {
     OR?: tipo_statusWhereInput[]
     NOT?: tipo_statusWhereInput | tipo_statusWhereInput[]
     nombre_status?: StringNullableFilter<"tipo_status"> | string | null
+    datos?: DatosListRelationFilter
   }, "pk_status">
 
   export type tipo_statusOrderByWithAggregationInput = {
@@ -21534,9 +22012,19 @@ export namespace Prisma {
   export type datosCreateInput = {
     nombre?: string | null
     apellido?: string | null
+    correo?: string | null
+    telefono?: string | null
+    asignatura?: string | null
+    salon?: string | null
+    dia?: string | null
+    hora_inicio?: string | null
+    hora_fin?: string | null
     documento?: documentoCreateNestedOneWithoutDatosInput
     civil?: civilCreateNestedOneWithoutDatosInput
     genero?: generoCreateNestedOneWithoutDatosInput
+    pregrado?: pregradoCreateNestedOneWithoutDatosInput
+    semestre?: semestreCreateNestedOneWithoutDatosInput
+    tipo_status?: tipo_statusCreateNestedOneWithoutDatosInput
   }
 
   export type datosUncheckedCreateInput = {
@@ -21546,14 +22034,34 @@ export namespace Prisma {
     fk_id_doc?: number | null
     fk_id_civil?: number | null
     fk_id_gene?: number | null
+    correo?: string | null
+    telefono?: string | null
+    fk_pregrado?: number | null
+    fk_id_semestre?: number | null
+    fk_id_tipo_status?: number | null
+    asignatura?: string | null
+    salon?: string | null
+    dia?: string | null
+    hora_inicio?: string | null
+    hora_fin?: string | null
   }
 
   export type datosUpdateInput = {
     nombre?: NullableStringFieldUpdateOperationsInput | string | null
     apellido?: NullableStringFieldUpdateOperationsInput | string | null
+    correo?: NullableStringFieldUpdateOperationsInput | string | null
+    telefono?: NullableStringFieldUpdateOperationsInput | string | null
+    asignatura?: NullableStringFieldUpdateOperationsInput | string | null
+    salon?: NullableStringFieldUpdateOperationsInput | string | null
+    dia?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_inicio?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_fin?: NullableStringFieldUpdateOperationsInput | string | null
     documento?: documentoUpdateOneWithoutDatosNestedInput
     civil?: civilUpdateOneWithoutDatosNestedInput
     genero?: generoUpdateOneWithoutDatosNestedInput
+    pregrado?: pregradoUpdateOneWithoutDatosNestedInput
+    semestre?: semestreUpdateOneWithoutDatosNestedInput
+    tipo_status?: tipo_statusUpdateOneWithoutDatosNestedInput
   }
 
   export type datosUncheckedUpdateInput = {
@@ -21563,6 +22071,16 @@ export namespace Prisma {
     fk_id_doc?: NullableIntFieldUpdateOperationsInput | number | null
     fk_id_civil?: NullableIntFieldUpdateOperationsInput | number | null
     fk_id_gene?: NullableIntFieldUpdateOperationsInput | number | null
+    correo?: NullableStringFieldUpdateOperationsInput | string | null
+    telefono?: NullableStringFieldUpdateOperationsInput | string | null
+    fk_pregrado?: NullableIntFieldUpdateOperationsInput | number | null
+    fk_id_semestre?: NullableIntFieldUpdateOperationsInput | number | null
+    fk_id_tipo_status?: NullableIntFieldUpdateOperationsInput | number | null
+    asignatura?: NullableStringFieldUpdateOperationsInput | string | null
+    salon?: NullableStringFieldUpdateOperationsInput | string | null
+    dia?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_inicio?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_fin?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type datosCreateManyInput = {
@@ -21572,11 +22090,28 @@ export namespace Prisma {
     fk_id_doc?: number | null
     fk_id_civil?: number | null
     fk_id_gene?: number | null
+    correo?: string | null
+    telefono?: string | null
+    fk_pregrado?: number | null
+    fk_id_semestre?: number | null
+    fk_id_tipo_status?: number | null
+    asignatura?: string | null
+    salon?: string | null
+    dia?: string | null
+    hora_inicio?: string | null
+    hora_fin?: string | null
   }
 
   export type datosUpdateManyMutationInput = {
     nombre?: NullableStringFieldUpdateOperationsInput | string | null
     apellido?: NullableStringFieldUpdateOperationsInput | string | null
+    correo?: NullableStringFieldUpdateOperationsInput | string | null
+    telefono?: NullableStringFieldUpdateOperationsInput | string | null
+    asignatura?: NullableStringFieldUpdateOperationsInput | string | null
+    salon?: NullableStringFieldUpdateOperationsInput | string | null
+    dia?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_inicio?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_fin?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type datosUncheckedUpdateManyInput = {
@@ -21586,6 +22121,16 @@ export namespace Prisma {
     fk_id_doc?: NullableIntFieldUpdateOperationsInput | number | null
     fk_id_civil?: NullableIntFieldUpdateOperationsInput | number | null
     fk_id_gene?: NullableIntFieldUpdateOperationsInput | number | null
+    correo?: NullableStringFieldUpdateOperationsInput | string | null
+    telefono?: NullableStringFieldUpdateOperationsInput | string | null
+    fk_pregrado?: NullableIntFieldUpdateOperationsInput | number | null
+    fk_id_semestre?: NullableIntFieldUpdateOperationsInput | number | null
+    fk_id_tipo_status?: NullableIntFieldUpdateOperationsInput | number | null
+    asignatura?: NullableStringFieldUpdateOperationsInput | string | null
+    salon?: NullableStringFieldUpdateOperationsInput | string | null
+    dia?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_inicio?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_fin?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type documentoCreateInput = {
@@ -21901,6 +22446,7 @@ export namespace Prisma {
     nombre_pregrado?: string | null
     preofe_mate?: preofe_mateCreateNestedManyWithoutPregradoInput
     semestre?: semestreCreateNestedManyWithoutPregradoInput
+    datos?: datosCreateNestedManyWithoutPregradoInput
   }
 
   export type pregradoUncheckedCreateInput = {
@@ -21908,12 +22454,14 @@ export namespace Prisma {
     nombre_pregrado?: string | null
     preofe_mate?: preofe_mateUncheckedCreateNestedManyWithoutPregradoInput
     semestre?: semestreUncheckedCreateNestedManyWithoutPregradoInput
+    datos?: datosUncheckedCreateNestedManyWithoutPregradoInput
   }
 
   export type pregradoUpdateInput = {
     nombre_pregrado?: NullableStringFieldUpdateOperationsInput | string | null
     preofe_mate?: preofe_mateUpdateManyWithoutPregradoNestedInput
     semestre?: semestreUpdateManyWithoutPregradoNestedInput
+    datos?: datosUpdateManyWithoutPregradoNestedInput
   }
 
   export type pregradoUncheckedUpdateInput = {
@@ -21921,6 +22469,7 @@ export namespace Prisma {
     nombre_pregrado?: NullableStringFieldUpdateOperationsInput | string | null
     preofe_mate?: preofe_mateUncheckedUpdateManyWithoutPregradoNestedInput
     semestre?: semestreUncheckedUpdateManyWithoutPregradoNestedInput
+    datos?: datosUncheckedUpdateManyWithoutPregradoNestedInput
   }
 
   export type pregradoCreateManyInput = {
@@ -21978,23 +22527,27 @@ export namespace Prisma {
   export type semestreCreateInput = {
     numero?: number | null
     pregrado?: pregradoCreateNestedOneWithoutSemestreInput
+    datos?: datosCreateNestedManyWithoutSemestreInput
   }
 
   export type semestreUncheckedCreateInput = {
     pk_semestre?: number
     numero?: number | null
     fk_pregrado?: number | null
+    datos?: datosUncheckedCreateNestedManyWithoutSemestreInput
   }
 
   export type semestreUpdateInput = {
     numero?: NullableIntFieldUpdateOperationsInput | number | null
     pregrado?: pregradoUpdateOneWithoutSemestreNestedInput
+    datos?: datosUpdateManyWithoutSemestreNestedInput
   }
 
   export type semestreUncheckedUpdateInput = {
     pk_semestre?: IntFieldUpdateOperationsInput | number
     numero?: NullableIntFieldUpdateOperationsInput | number | null
     fk_pregrado?: NullableIntFieldUpdateOperationsInput | number | null
+    datos?: datosUncheckedUpdateManyWithoutSemestreNestedInput
   }
 
   export type semestreCreateManyInput = {
@@ -22015,20 +22568,24 @@ export namespace Prisma {
 
   export type tipo_statusCreateInput = {
     nombre_status?: string | null
+    datos?: datosCreateNestedManyWithoutTipo_statusInput
   }
 
   export type tipo_statusUncheckedCreateInput = {
     pk_status?: number
     nombre_status?: string | null
+    datos?: datosUncheckedCreateNestedManyWithoutTipo_statusInput
   }
 
   export type tipo_statusUpdateInput = {
     nombre_status?: NullableStringFieldUpdateOperationsInput | string | null
+    datos?: datosUpdateManyWithoutTipo_statusNestedInput
   }
 
   export type tipo_statusUncheckedUpdateInput = {
     pk_status?: IntFieldUpdateOperationsInput | number
     nombre_status?: NullableStringFieldUpdateOperationsInput | string | null
+    datos?: datosUncheckedUpdateManyWithoutTipo_statusNestedInput
   }
 
   export type tipo_statusCreateManyInput = {
@@ -22393,6 +22950,21 @@ export namespace Prisma {
     isNot?: generoWhereInput | null
   }
 
+  export type PregradoNullableScalarRelationFilter = {
+    is?: pregradoWhereInput | null
+    isNot?: pregradoWhereInput | null
+  }
+
+  export type SemestreNullableScalarRelationFilter = {
+    is?: semestreWhereInput | null
+    isNot?: semestreWhereInput | null
+  }
+
+  export type Tipo_statusNullableScalarRelationFilter = {
+    is?: tipo_statusWhereInput | null
+    isNot?: tipo_statusWhereInput | null
+  }
+
   export type datosOrderByRelevanceInput = {
     fields: datosOrderByRelevanceFieldEnum | datosOrderByRelevanceFieldEnum[]
     sort: SortOrder
@@ -22406,6 +22978,16 @@ export namespace Prisma {
     fk_id_doc?: SortOrder
     fk_id_civil?: SortOrder
     fk_id_gene?: SortOrder
+    correo?: SortOrder
+    telefono?: SortOrder
+    fk_pregrado?: SortOrder
+    fk_id_semestre?: SortOrder
+    fk_id_tipo_status?: SortOrder
+    asignatura?: SortOrder
+    salon?: SortOrder
+    dia?: SortOrder
+    hora_inicio?: SortOrder
+    hora_fin?: SortOrder
   }
 
   export type datosAvgOrderByAggregateInput = {
@@ -22413,6 +22995,9 @@ export namespace Prisma {
     fk_id_doc?: SortOrder
     fk_id_civil?: SortOrder
     fk_id_gene?: SortOrder
+    fk_pregrado?: SortOrder
+    fk_id_semestre?: SortOrder
+    fk_id_tipo_status?: SortOrder
   }
 
   export type datosMaxOrderByAggregateInput = {
@@ -22422,6 +23007,16 @@ export namespace Prisma {
     fk_id_doc?: SortOrder
     fk_id_civil?: SortOrder
     fk_id_gene?: SortOrder
+    correo?: SortOrder
+    telefono?: SortOrder
+    fk_pregrado?: SortOrder
+    fk_id_semestre?: SortOrder
+    fk_id_tipo_status?: SortOrder
+    asignatura?: SortOrder
+    salon?: SortOrder
+    dia?: SortOrder
+    hora_inicio?: SortOrder
+    hora_fin?: SortOrder
   }
 
   export type datosMinOrderByAggregateInput = {
@@ -22431,6 +23026,16 @@ export namespace Prisma {
     fk_id_doc?: SortOrder
     fk_id_civil?: SortOrder
     fk_id_gene?: SortOrder
+    correo?: SortOrder
+    telefono?: SortOrder
+    fk_pregrado?: SortOrder
+    fk_id_semestre?: SortOrder
+    fk_id_tipo_status?: SortOrder
+    asignatura?: SortOrder
+    salon?: SortOrder
+    dia?: SortOrder
+    hora_inicio?: SortOrder
+    hora_fin?: SortOrder
   }
 
   export type datosSumOrderByAggregateInput = {
@@ -22438,6 +23043,9 @@ export namespace Prisma {
     fk_id_doc?: SortOrder
     fk_id_civil?: SortOrder
     fk_id_gene?: SortOrder
+    fk_pregrado?: SortOrder
+    fk_id_semestre?: SortOrder
+    fk_id_tipo_status?: SortOrder
   }
 
   export type documentoOrderByRelevanceInput = {
@@ -22789,11 +23397,6 @@ export namespace Prisma {
     pk_pregrado?: SortOrder
   }
 
-  export type PregradoNullableScalarRelationFilter = {
-    is?: pregradoWhereInput | null
-    isNot?: pregradoWhereInput | null
-  }
-
   export type preofe_mateCountOrderByAggregateInput = {
     pk_preofe?: SortOrder
     fk_pregrado?: SortOrder
@@ -23121,6 +23724,24 @@ export namespace Prisma {
     connect?: generoWhereUniqueInput
   }
 
+  export type pregradoCreateNestedOneWithoutDatosInput = {
+    create?: XOR<pregradoCreateWithoutDatosInput, pregradoUncheckedCreateWithoutDatosInput>
+    connectOrCreate?: pregradoCreateOrConnectWithoutDatosInput
+    connect?: pregradoWhereUniqueInput
+  }
+
+  export type semestreCreateNestedOneWithoutDatosInput = {
+    create?: XOR<semestreCreateWithoutDatosInput, semestreUncheckedCreateWithoutDatosInput>
+    connectOrCreate?: semestreCreateOrConnectWithoutDatosInput
+    connect?: semestreWhereUniqueInput
+  }
+
+  export type tipo_statusCreateNestedOneWithoutDatosInput = {
+    create?: XOR<tipo_statusCreateWithoutDatosInput, tipo_statusUncheckedCreateWithoutDatosInput>
+    connectOrCreate?: tipo_statusCreateOrConnectWithoutDatosInput
+    connect?: tipo_statusWhereUniqueInput
+  }
+
   export type documentoUpdateOneWithoutDatosNestedInput = {
     create?: XOR<documentoCreateWithoutDatosInput, documentoUncheckedCreateWithoutDatosInput>
     connectOrCreate?: documentoCreateOrConnectWithoutDatosInput
@@ -23149,6 +23770,36 @@ export namespace Prisma {
     delete?: generoWhereInput | boolean
     connect?: generoWhereUniqueInput
     update?: XOR<XOR<generoUpdateToOneWithWhereWithoutDatosInput, generoUpdateWithoutDatosInput>, generoUncheckedUpdateWithoutDatosInput>
+  }
+
+  export type pregradoUpdateOneWithoutDatosNestedInput = {
+    create?: XOR<pregradoCreateWithoutDatosInput, pregradoUncheckedCreateWithoutDatosInput>
+    connectOrCreate?: pregradoCreateOrConnectWithoutDatosInput
+    upsert?: pregradoUpsertWithoutDatosInput
+    disconnect?: pregradoWhereInput | boolean
+    delete?: pregradoWhereInput | boolean
+    connect?: pregradoWhereUniqueInput
+    update?: XOR<XOR<pregradoUpdateToOneWithWhereWithoutDatosInput, pregradoUpdateWithoutDatosInput>, pregradoUncheckedUpdateWithoutDatosInput>
+  }
+
+  export type semestreUpdateOneWithoutDatosNestedInput = {
+    create?: XOR<semestreCreateWithoutDatosInput, semestreUncheckedCreateWithoutDatosInput>
+    connectOrCreate?: semestreCreateOrConnectWithoutDatosInput
+    upsert?: semestreUpsertWithoutDatosInput
+    disconnect?: semestreWhereInput | boolean
+    delete?: semestreWhereInput | boolean
+    connect?: semestreWhereUniqueInput
+    update?: XOR<XOR<semestreUpdateToOneWithWhereWithoutDatosInput, semestreUpdateWithoutDatosInput>, semestreUncheckedUpdateWithoutDatosInput>
+  }
+
+  export type tipo_statusUpdateOneWithoutDatosNestedInput = {
+    create?: XOR<tipo_statusCreateWithoutDatosInput, tipo_statusUncheckedCreateWithoutDatosInput>
+    connectOrCreate?: tipo_statusCreateOrConnectWithoutDatosInput
+    upsert?: tipo_statusUpsertWithoutDatosInput
+    disconnect?: tipo_statusWhereInput | boolean
+    delete?: tipo_statusWhereInput | boolean
+    connect?: tipo_statusWhereUniqueInput
+    update?: XOR<XOR<tipo_statusUpdateToOneWithWhereWithoutDatosInput, tipo_statusUpdateWithoutDatosInput>, tipo_statusUncheckedUpdateWithoutDatosInput>
   }
 
   export type datosCreateNestedManyWithoutDocumentoInput = {
@@ -23543,6 +24194,13 @@ export namespace Prisma {
     connect?: semestreWhereUniqueInput | semestreWhereUniqueInput[]
   }
 
+  export type datosCreateNestedManyWithoutPregradoInput = {
+    create?: XOR<datosCreateWithoutPregradoInput, datosUncheckedCreateWithoutPregradoInput> | datosCreateWithoutPregradoInput[] | datosUncheckedCreateWithoutPregradoInput[]
+    connectOrCreate?: datosCreateOrConnectWithoutPregradoInput | datosCreateOrConnectWithoutPregradoInput[]
+    createMany?: datosCreateManyPregradoInputEnvelope
+    connect?: datosWhereUniqueInput | datosWhereUniqueInput[]
+  }
+
   export type preofe_mateUncheckedCreateNestedManyWithoutPregradoInput = {
     create?: XOR<preofe_mateCreateWithoutPregradoInput, preofe_mateUncheckedCreateWithoutPregradoInput> | preofe_mateCreateWithoutPregradoInput[] | preofe_mateUncheckedCreateWithoutPregradoInput[]
     connectOrCreate?: preofe_mateCreateOrConnectWithoutPregradoInput | preofe_mateCreateOrConnectWithoutPregradoInput[]
@@ -23555,6 +24213,13 @@ export namespace Prisma {
     connectOrCreate?: semestreCreateOrConnectWithoutPregradoInput | semestreCreateOrConnectWithoutPregradoInput[]
     createMany?: semestreCreateManyPregradoInputEnvelope
     connect?: semestreWhereUniqueInput | semestreWhereUniqueInput[]
+  }
+
+  export type datosUncheckedCreateNestedManyWithoutPregradoInput = {
+    create?: XOR<datosCreateWithoutPregradoInput, datosUncheckedCreateWithoutPregradoInput> | datosCreateWithoutPregradoInput[] | datosUncheckedCreateWithoutPregradoInput[]
+    connectOrCreate?: datosCreateOrConnectWithoutPregradoInput | datosCreateOrConnectWithoutPregradoInput[]
+    createMany?: datosCreateManyPregradoInputEnvelope
+    connect?: datosWhereUniqueInput | datosWhereUniqueInput[]
   }
 
   export type preofe_mateUpdateManyWithoutPregradoNestedInput = {
@@ -23585,6 +24250,20 @@ export namespace Prisma {
     deleteMany?: semestreScalarWhereInput | semestreScalarWhereInput[]
   }
 
+  export type datosUpdateManyWithoutPregradoNestedInput = {
+    create?: XOR<datosCreateWithoutPregradoInput, datosUncheckedCreateWithoutPregradoInput> | datosCreateWithoutPregradoInput[] | datosUncheckedCreateWithoutPregradoInput[]
+    connectOrCreate?: datosCreateOrConnectWithoutPregradoInput | datosCreateOrConnectWithoutPregradoInput[]
+    upsert?: datosUpsertWithWhereUniqueWithoutPregradoInput | datosUpsertWithWhereUniqueWithoutPregradoInput[]
+    createMany?: datosCreateManyPregradoInputEnvelope
+    set?: datosWhereUniqueInput | datosWhereUniqueInput[]
+    disconnect?: datosWhereUniqueInput | datosWhereUniqueInput[]
+    delete?: datosWhereUniqueInput | datosWhereUniqueInput[]
+    connect?: datosWhereUniqueInput | datosWhereUniqueInput[]
+    update?: datosUpdateWithWhereUniqueWithoutPregradoInput | datosUpdateWithWhereUniqueWithoutPregradoInput[]
+    updateMany?: datosUpdateManyWithWhereWithoutPregradoInput | datosUpdateManyWithWhereWithoutPregradoInput[]
+    deleteMany?: datosScalarWhereInput | datosScalarWhereInput[]
+  }
+
   export type preofe_mateUncheckedUpdateManyWithoutPregradoNestedInput = {
     create?: XOR<preofe_mateCreateWithoutPregradoInput, preofe_mateUncheckedCreateWithoutPregradoInput> | preofe_mateCreateWithoutPregradoInput[] | preofe_mateUncheckedCreateWithoutPregradoInput[]
     connectOrCreate?: preofe_mateCreateOrConnectWithoutPregradoInput | preofe_mateCreateOrConnectWithoutPregradoInput[]
@@ -23611,6 +24290,20 @@ export namespace Prisma {
     update?: semestreUpdateWithWhereUniqueWithoutPregradoInput | semestreUpdateWithWhereUniqueWithoutPregradoInput[]
     updateMany?: semestreUpdateManyWithWhereWithoutPregradoInput | semestreUpdateManyWithWhereWithoutPregradoInput[]
     deleteMany?: semestreScalarWhereInput | semestreScalarWhereInput[]
+  }
+
+  export type datosUncheckedUpdateManyWithoutPregradoNestedInput = {
+    create?: XOR<datosCreateWithoutPregradoInput, datosUncheckedCreateWithoutPregradoInput> | datosCreateWithoutPregradoInput[] | datosUncheckedCreateWithoutPregradoInput[]
+    connectOrCreate?: datosCreateOrConnectWithoutPregradoInput | datosCreateOrConnectWithoutPregradoInput[]
+    upsert?: datosUpsertWithWhereUniqueWithoutPregradoInput | datosUpsertWithWhereUniqueWithoutPregradoInput[]
+    createMany?: datosCreateManyPregradoInputEnvelope
+    set?: datosWhereUniqueInput | datosWhereUniqueInput[]
+    disconnect?: datosWhereUniqueInput | datosWhereUniqueInput[]
+    delete?: datosWhereUniqueInput | datosWhereUniqueInput[]
+    connect?: datosWhereUniqueInput | datosWhereUniqueInput[]
+    update?: datosUpdateWithWhereUniqueWithoutPregradoInput | datosUpdateWithWhereUniqueWithoutPregradoInput[]
+    updateMany?: datosUpdateManyWithWhereWithoutPregradoInput | datosUpdateManyWithWhereWithoutPregradoInput[]
+    deleteMany?: datosScalarWhereInput | datosScalarWhereInput[]
   }
 
   export type pregradoCreateNestedOneWithoutPreofe_mateInput = {
@@ -23651,6 +24344,20 @@ export namespace Prisma {
     connect?: pregradoWhereUniqueInput
   }
 
+  export type datosCreateNestedManyWithoutSemestreInput = {
+    create?: XOR<datosCreateWithoutSemestreInput, datosUncheckedCreateWithoutSemestreInput> | datosCreateWithoutSemestreInput[] | datosUncheckedCreateWithoutSemestreInput[]
+    connectOrCreate?: datosCreateOrConnectWithoutSemestreInput | datosCreateOrConnectWithoutSemestreInput[]
+    createMany?: datosCreateManySemestreInputEnvelope
+    connect?: datosWhereUniqueInput | datosWhereUniqueInput[]
+  }
+
+  export type datosUncheckedCreateNestedManyWithoutSemestreInput = {
+    create?: XOR<datosCreateWithoutSemestreInput, datosUncheckedCreateWithoutSemestreInput> | datosCreateWithoutSemestreInput[] | datosUncheckedCreateWithoutSemestreInput[]
+    connectOrCreate?: datosCreateOrConnectWithoutSemestreInput | datosCreateOrConnectWithoutSemestreInput[]
+    createMany?: datosCreateManySemestreInputEnvelope
+    connect?: datosWhereUniqueInput | datosWhereUniqueInput[]
+  }
+
   export type pregradoUpdateOneWithoutSemestreNestedInput = {
     create?: XOR<pregradoCreateWithoutSemestreInput, pregradoUncheckedCreateWithoutSemestreInput>
     connectOrCreate?: pregradoCreateOrConnectWithoutSemestreInput
@@ -23659,6 +24366,76 @@ export namespace Prisma {
     delete?: pregradoWhereInput | boolean
     connect?: pregradoWhereUniqueInput
     update?: XOR<XOR<pregradoUpdateToOneWithWhereWithoutSemestreInput, pregradoUpdateWithoutSemestreInput>, pregradoUncheckedUpdateWithoutSemestreInput>
+  }
+
+  export type datosUpdateManyWithoutSemestreNestedInput = {
+    create?: XOR<datosCreateWithoutSemestreInput, datosUncheckedCreateWithoutSemestreInput> | datosCreateWithoutSemestreInput[] | datosUncheckedCreateWithoutSemestreInput[]
+    connectOrCreate?: datosCreateOrConnectWithoutSemestreInput | datosCreateOrConnectWithoutSemestreInput[]
+    upsert?: datosUpsertWithWhereUniqueWithoutSemestreInput | datosUpsertWithWhereUniqueWithoutSemestreInput[]
+    createMany?: datosCreateManySemestreInputEnvelope
+    set?: datosWhereUniqueInput | datosWhereUniqueInput[]
+    disconnect?: datosWhereUniqueInput | datosWhereUniqueInput[]
+    delete?: datosWhereUniqueInput | datosWhereUniqueInput[]
+    connect?: datosWhereUniqueInput | datosWhereUniqueInput[]
+    update?: datosUpdateWithWhereUniqueWithoutSemestreInput | datosUpdateWithWhereUniqueWithoutSemestreInput[]
+    updateMany?: datosUpdateManyWithWhereWithoutSemestreInput | datosUpdateManyWithWhereWithoutSemestreInput[]
+    deleteMany?: datosScalarWhereInput | datosScalarWhereInput[]
+  }
+
+  export type datosUncheckedUpdateManyWithoutSemestreNestedInput = {
+    create?: XOR<datosCreateWithoutSemestreInput, datosUncheckedCreateWithoutSemestreInput> | datosCreateWithoutSemestreInput[] | datosUncheckedCreateWithoutSemestreInput[]
+    connectOrCreate?: datosCreateOrConnectWithoutSemestreInput | datosCreateOrConnectWithoutSemestreInput[]
+    upsert?: datosUpsertWithWhereUniqueWithoutSemestreInput | datosUpsertWithWhereUniqueWithoutSemestreInput[]
+    createMany?: datosCreateManySemestreInputEnvelope
+    set?: datosWhereUniqueInput | datosWhereUniqueInput[]
+    disconnect?: datosWhereUniqueInput | datosWhereUniqueInput[]
+    delete?: datosWhereUniqueInput | datosWhereUniqueInput[]
+    connect?: datosWhereUniqueInput | datosWhereUniqueInput[]
+    update?: datosUpdateWithWhereUniqueWithoutSemestreInput | datosUpdateWithWhereUniqueWithoutSemestreInput[]
+    updateMany?: datosUpdateManyWithWhereWithoutSemestreInput | datosUpdateManyWithWhereWithoutSemestreInput[]
+    deleteMany?: datosScalarWhereInput | datosScalarWhereInput[]
+  }
+
+  export type datosCreateNestedManyWithoutTipo_statusInput = {
+    create?: XOR<datosCreateWithoutTipo_statusInput, datosUncheckedCreateWithoutTipo_statusInput> | datosCreateWithoutTipo_statusInput[] | datosUncheckedCreateWithoutTipo_statusInput[]
+    connectOrCreate?: datosCreateOrConnectWithoutTipo_statusInput | datosCreateOrConnectWithoutTipo_statusInput[]
+    createMany?: datosCreateManyTipo_statusInputEnvelope
+    connect?: datosWhereUniqueInput | datosWhereUniqueInput[]
+  }
+
+  export type datosUncheckedCreateNestedManyWithoutTipo_statusInput = {
+    create?: XOR<datosCreateWithoutTipo_statusInput, datosUncheckedCreateWithoutTipo_statusInput> | datosCreateWithoutTipo_statusInput[] | datosUncheckedCreateWithoutTipo_statusInput[]
+    connectOrCreate?: datosCreateOrConnectWithoutTipo_statusInput | datosCreateOrConnectWithoutTipo_statusInput[]
+    createMany?: datosCreateManyTipo_statusInputEnvelope
+    connect?: datosWhereUniqueInput | datosWhereUniqueInput[]
+  }
+
+  export type datosUpdateManyWithoutTipo_statusNestedInput = {
+    create?: XOR<datosCreateWithoutTipo_statusInput, datosUncheckedCreateWithoutTipo_statusInput> | datosCreateWithoutTipo_statusInput[] | datosUncheckedCreateWithoutTipo_statusInput[]
+    connectOrCreate?: datosCreateOrConnectWithoutTipo_statusInput | datosCreateOrConnectWithoutTipo_statusInput[]
+    upsert?: datosUpsertWithWhereUniqueWithoutTipo_statusInput | datosUpsertWithWhereUniqueWithoutTipo_statusInput[]
+    createMany?: datosCreateManyTipo_statusInputEnvelope
+    set?: datosWhereUniqueInput | datosWhereUniqueInput[]
+    disconnect?: datosWhereUniqueInput | datosWhereUniqueInput[]
+    delete?: datosWhereUniqueInput | datosWhereUniqueInput[]
+    connect?: datosWhereUniqueInput | datosWhereUniqueInput[]
+    update?: datosUpdateWithWhereUniqueWithoutTipo_statusInput | datosUpdateWithWhereUniqueWithoutTipo_statusInput[]
+    updateMany?: datosUpdateManyWithWhereWithoutTipo_statusInput | datosUpdateManyWithWhereWithoutTipo_statusInput[]
+    deleteMany?: datosScalarWhereInput | datosScalarWhereInput[]
+  }
+
+  export type datosUncheckedUpdateManyWithoutTipo_statusNestedInput = {
+    create?: XOR<datosCreateWithoutTipo_statusInput, datosUncheckedCreateWithoutTipo_statusInput> | datosCreateWithoutTipo_statusInput[] | datosUncheckedCreateWithoutTipo_statusInput[]
+    connectOrCreate?: datosCreateOrConnectWithoutTipo_statusInput | datosCreateOrConnectWithoutTipo_statusInput[]
+    upsert?: datosUpsertWithWhereUniqueWithoutTipo_statusInput | datosUpsertWithWhereUniqueWithoutTipo_statusInput[]
+    createMany?: datosCreateManyTipo_statusInputEnvelope
+    set?: datosWhereUniqueInput | datosWhereUniqueInput[]
+    disconnect?: datosWhereUniqueInput | datosWhereUniqueInput[]
+    delete?: datosWhereUniqueInput | datosWhereUniqueInput[]
+    connect?: datosWhereUniqueInput | datosWhereUniqueInput[]
+    update?: datosUpdateWithWhereUniqueWithoutTipo_statusInput | datosUpdateWithWhereUniqueWithoutTipo_statusInput[]
+    updateMany?: datosUpdateManyWithWhereWithoutTipo_statusInput | datosUpdateManyWithWhereWithoutTipo_statusInput[]
+    deleteMany?: datosScalarWhereInput | datosScalarWhereInput[]
   }
 
   export type NestedIntFilter<$PrismaModel = never> = {
@@ -23981,8 +24758,18 @@ export namespace Prisma {
   export type datosCreateWithoutCivilInput = {
     nombre?: string | null
     apellido?: string | null
+    correo?: string | null
+    telefono?: string | null
+    asignatura?: string | null
+    salon?: string | null
+    dia?: string | null
+    hora_inicio?: string | null
+    hora_fin?: string | null
     documento?: documentoCreateNestedOneWithoutDatosInput
     genero?: generoCreateNestedOneWithoutDatosInput
+    pregrado?: pregradoCreateNestedOneWithoutDatosInput
+    semestre?: semestreCreateNestedOneWithoutDatosInput
+    tipo_status?: tipo_statusCreateNestedOneWithoutDatosInput
   }
 
   export type datosUncheckedCreateWithoutCivilInput = {
@@ -23991,6 +24778,16 @@ export namespace Prisma {
     apellido?: string | null
     fk_id_doc?: number | null
     fk_id_gene?: number | null
+    correo?: string | null
+    telefono?: string | null
+    fk_pregrado?: number | null
+    fk_id_semestre?: number | null
+    fk_id_tipo_status?: number | null
+    asignatura?: string | null
+    salon?: string | null
+    dia?: string | null
+    hora_inicio?: string | null
+    hora_fin?: string | null
   }
 
   export type datosCreateOrConnectWithoutCivilInput = {
@@ -24054,6 +24851,16 @@ export namespace Prisma {
     fk_id_doc?: IntNullableFilter<"datos"> | number | null
     fk_id_civil?: IntNullableFilter<"datos"> | number | null
     fk_id_gene?: IntNullableFilter<"datos"> | number | null
+    correo?: StringNullableFilter<"datos"> | string | null
+    telefono?: StringNullableFilter<"datos"> | string | null
+    fk_pregrado?: IntNullableFilter<"datos"> | number | null
+    fk_id_semestre?: IntNullableFilter<"datos"> | number | null
+    fk_id_tipo_status?: IntNullableFilter<"datos"> | number | null
+    asignatura?: StringNullableFilter<"datos"> | string | null
+    salon?: StringNullableFilter<"datos"> | string | null
+    dia?: StringNullableFilter<"datos"> | string | null
+    hora_inicio?: StringNullableFilter<"datos"> | string | null
+    hora_fin?: StringNullableFilter<"datos"> | string | null
   }
 
   export type documentoCreateWithoutDatosInput = {
@@ -24105,6 +24912,54 @@ export namespace Prisma {
   export type generoCreateOrConnectWithoutDatosInput = {
     where: generoWhereUniqueInput
     create: XOR<generoCreateWithoutDatosInput, generoUncheckedCreateWithoutDatosInput>
+  }
+
+  export type pregradoCreateWithoutDatosInput = {
+    nombre_pregrado?: string | null
+    preofe_mate?: preofe_mateCreateNestedManyWithoutPregradoInput
+    semestre?: semestreCreateNestedManyWithoutPregradoInput
+  }
+
+  export type pregradoUncheckedCreateWithoutDatosInput = {
+    pk_pregrado?: number
+    nombre_pregrado?: string | null
+    preofe_mate?: preofe_mateUncheckedCreateNestedManyWithoutPregradoInput
+    semestre?: semestreUncheckedCreateNestedManyWithoutPregradoInput
+  }
+
+  export type pregradoCreateOrConnectWithoutDatosInput = {
+    where: pregradoWhereUniqueInput
+    create: XOR<pregradoCreateWithoutDatosInput, pregradoUncheckedCreateWithoutDatosInput>
+  }
+
+  export type semestreCreateWithoutDatosInput = {
+    numero?: number | null
+    pregrado?: pregradoCreateNestedOneWithoutSemestreInput
+  }
+
+  export type semestreUncheckedCreateWithoutDatosInput = {
+    pk_semestre?: number
+    numero?: number | null
+    fk_pregrado?: number | null
+  }
+
+  export type semestreCreateOrConnectWithoutDatosInput = {
+    where: semestreWhereUniqueInput
+    create: XOR<semestreCreateWithoutDatosInput, semestreUncheckedCreateWithoutDatosInput>
+  }
+
+  export type tipo_statusCreateWithoutDatosInput = {
+    nombre_status?: string | null
+  }
+
+  export type tipo_statusUncheckedCreateWithoutDatosInput = {
+    pk_status?: number
+    nombre_status?: string | null
+  }
+
+  export type tipo_statusCreateOrConnectWithoutDatosInput = {
+    where: tipo_statusWhereUniqueInput
+    create: XOR<tipo_statusCreateWithoutDatosInput, tipo_statusUncheckedCreateWithoutDatosInput>
   }
 
   export type documentoUpsertWithoutDatosInput = {
@@ -24176,11 +25031,87 @@ export namespace Prisma {
     fk_id_estado?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
+  export type pregradoUpsertWithoutDatosInput = {
+    update: XOR<pregradoUpdateWithoutDatosInput, pregradoUncheckedUpdateWithoutDatosInput>
+    create: XOR<pregradoCreateWithoutDatosInput, pregradoUncheckedCreateWithoutDatosInput>
+    where?: pregradoWhereInput
+  }
+
+  export type pregradoUpdateToOneWithWhereWithoutDatosInput = {
+    where?: pregradoWhereInput
+    data: XOR<pregradoUpdateWithoutDatosInput, pregradoUncheckedUpdateWithoutDatosInput>
+  }
+
+  export type pregradoUpdateWithoutDatosInput = {
+    nombre_pregrado?: NullableStringFieldUpdateOperationsInput | string | null
+    preofe_mate?: preofe_mateUpdateManyWithoutPregradoNestedInput
+    semestre?: semestreUpdateManyWithoutPregradoNestedInput
+  }
+
+  export type pregradoUncheckedUpdateWithoutDatosInput = {
+    pk_pregrado?: IntFieldUpdateOperationsInput | number
+    nombre_pregrado?: NullableStringFieldUpdateOperationsInput | string | null
+    preofe_mate?: preofe_mateUncheckedUpdateManyWithoutPregradoNestedInput
+    semestre?: semestreUncheckedUpdateManyWithoutPregradoNestedInput
+  }
+
+  export type semestreUpsertWithoutDatosInput = {
+    update: XOR<semestreUpdateWithoutDatosInput, semestreUncheckedUpdateWithoutDatosInput>
+    create: XOR<semestreCreateWithoutDatosInput, semestreUncheckedCreateWithoutDatosInput>
+    where?: semestreWhereInput
+  }
+
+  export type semestreUpdateToOneWithWhereWithoutDatosInput = {
+    where?: semestreWhereInput
+    data: XOR<semestreUpdateWithoutDatosInput, semestreUncheckedUpdateWithoutDatosInput>
+  }
+
+  export type semestreUpdateWithoutDatosInput = {
+    numero?: NullableIntFieldUpdateOperationsInput | number | null
+    pregrado?: pregradoUpdateOneWithoutSemestreNestedInput
+  }
+
+  export type semestreUncheckedUpdateWithoutDatosInput = {
+    pk_semestre?: IntFieldUpdateOperationsInput | number
+    numero?: NullableIntFieldUpdateOperationsInput | number | null
+    fk_pregrado?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type tipo_statusUpsertWithoutDatosInput = {
+    update: XOR<tipo_statusUpdateWithoutDatosInput, tipo_statusUncheckedUpdateWithoutDatosInput>
+    create: XOR<tipo_statusCreateWithoutDatosInput, tipo_statusUncheckedCreateWithoutDatosInput>
+    where?: tipo_statusWhereInput
+  }
+
+  export type tipo_statusUpdateToOneWithWhereWithoutDatosInput = {
+    where?: tipo_statusWhereInput
+    data: XOR<tipo_statusUpdateWithoutDatosInput, tipo_statusUncheckedUpdateWithoutDatosInput>
+  }
+
+  export type tipo_statusUpdateWithoutDatosInput = {
+    nombre_status?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type tipo_statusUncheckedUpdateWithoutDatosInput = {
+    pk_status?: IntFieldUpdateOperationsInput | number
+    nombre_status?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
   export type datosCreateWithoutDocumentoInput = {
     nombre?: string | null
     apellido?: string | null
+    correo?: string | null
+    telefono?: string | null
+    asignatura?: string | null
+    salon?: string | null
+    dia?: string | null
+    hora_inicio?: string | null
+    hora_fin?: string | null
     civil?: civilCreateNestedOneWithoutDatosInput
     genero?: generoCreateNestedOneWithoutDatosInput
+    pregrado?: pregradoCreateNestedOneWithoutDatosInput
+    semestre?: semestreCreateNestedOneWithoutDatosInput
+    tipo_status?: tipo_statusCreateNestedOneWithoutDatosInput
   }
 
   export type datosUncheckedCreateWithoutDocumentoInput = {
@@ -24189,6 +25120,16 @@ export namespace Prisma {
     apellido?: string | null
     fk_id_civil?: number | null
     fk_id_gene?: number | null
+    correo?: string | null
+    telefono?: string | null
+    fk_pregrado?: number | null
+    fk_id_semestre?: number | null
+    fk_id_tipo_status?: number | null
+    asignatura?: string | null
+    salon?: string | null
+    dia?: string | null
+    hora_inicio?: string | null
+    hora_fin?: string | null
   }
 
   export type datosCreateOrConnectWithoutDocumentoInput = {
@@ -24405,8 +25346,18 @@ export namespace Prisma {
   export type datosCreateWithoutGeneroInput = {
     nombre?: string | null
     apellido?: string | null
+    correo?: string | null
+    telefono?: string | null
+    asignatura?: string | null
+    salon?: string | null
+    dia?: string | null
+    hora_inicio?: string | null
+    hora_fin?: string | null
     documento?: documentoCreateNestedOneWithoutDatosInput
     civil?: civilCreateNestedOneWithoutDatosInput
+    pregrado?: pregradoCreateNestedOneWithoutDatosInput
+    semestre?: semestreCreateNestedOneWithoutDatosInput
+    tipo_status?: tipo_statusCreateNestedOneWithoutDatosInput
   }
 
   export type datosUncheckedCreateWithoutGeneroInput = {
@@ -24415,6 +25366,16 @@ export namespace Prisma {
     apellido?: string | null
     fk_id_doc?: number | null
     fk_id_civil?: number | null
+    correo?: string | null
+    telefono?: string | null
+    fk_pregrado?: number | null
+    fk_id_semestre?: number | null
+    fk_id_tipo_status?: number | null
+    asignatura?: string | null
+    salon?: string | null
+    dia?: string | null
+    hora_inicio?: string | null
+    hora_fin?: string | null
   }
 
   export type datosCreateOrConnectWithoutGeneroInput = {
@@ -24714,11 +25675,13 @@ export namespace Prisma {
 
   export type semestreCreateWithoutPregradoInput = {
     numero?: number | null
+    datos?: datosCreateNestedManyWithoutSemestreInput
   }
 
   export type semestreUncheckedCreateWithoutPregradoInput = {
     pk_semestre?: number
     numero?: number | null
+    datos?: datosUncheckedCreateNestedManyWithoutSemestreInput
   }
 
   export type semestreCreateOrConnectWithoutPregradoInput = {
@@ -24728,6 +25691,51 @@ export namespace Prisma {
 
   export type semestreCreateManyPregradoInputEnvelope = {
     data: semestreCreateManyPregradoInput | semestreCreateManyPregradoInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type datosCreateWithoutPregradoInput = {
+    nombre?: string | null
+    apellido?: string | null
+    correo?: string | null
+    telefono?: string | null
+    asignatura?: string | null
+    salon?: string | null
+    dia?: string | null
+    hora_inicio?: string | null
+    hora_fin?: string | null
+    documento?: documentoCreateNestedOneWithoutDatosInput
+    civil?: civilCreateNestedOneWithoutDatosInput
+    genero?: generoCreateNestedOneWithoutDatosInput
+    semestre?: semestreCreateNestedOneWithoutDatosInput
+    tipo_status?: tipo_statusCreateNestedOneWithoutDatosInput
+  }
+
+  export type datosUncheckedCreateWithoutPregradoInput = {
+    pk_dato?: number
+    nombre?: string | null
+    apellido?: string | null
+    fk_id_doc?: number | null
+    fk_id_civil?: number | null
+    fk_id_gene?: number | null
+    correo?: string | null
+    telefono?: string | null
+    fk_id_semestre?: number | null
+    fk_id_tipo_status?: number | null
+    asignatura?: string | null
+    salon?: string | null
+    dia?: string | null
+    hora_inicio?: string | null
+    hora_fin?: string | null
+  }
+
+  export type datosCreateOrConnectWithoutPregradoInput = {
+    where: datosWhereUniqueInput
+    create: XOR<datosCreateWithoutPregradoInput, datosUncheckedCreateWithoutPregradoInput>
+  }
+
+  export type datosCreateManyPregradoInputEnvelope = {
+    data: datosCreateManyPregradoInput | datosCreateManyPregradoInput[]
     skipDuplicates?: boolean
   }
 
@@ -24772,15 +25780,33 @@ export namespace Prisma {
     fk_pregrado?: IntNullableFilter<"semestre"> | number | null
   }
 
+  export type datosUpsertWithWhereUniqueWithoutPregradoInput = {
+    where: datosWhereUniqueInput
+    update: XOR<datosUpdateWithoutPregradoInput, datosUncheckedUpdateWithoutPregradoInput>
+    create: XOR<datosCreateWithoutPregradoInput, datosUncheckedCreateWithoutPregradoInput>
+  }
+
+  export type datosUpdateWithWhereUniqueWithoutPregradoInput = {
+    where: datosWhereUniqueInput
+    data: XOR<datosUpdateWithoutPregradoInput, datosUncheckedUpdateWithoutPregradoInput>
+  }
+
+  export type datosUpdateManyWithWhereWithoutPregradoInput = {
+    where: datosScalarWhereInput
+    data: XOR<datosUpdateManyMutationInput, datosUncheckedUpdateManyWithoutPregradoInput>
+  }
+
   export type pregradoCreateWithoutPreofe_mateInput = {
     nombre_pregrado?: string | null
     semestre?: semestreCreateNestedManyWithoutPregradoInput
+    datos?: datosCreateNestedManyWithoutPregradoInput
   }
 
   export type pregradoUncheckedCreateWithoutPreofe_mateInput = {
     pk_pregrado?: number
     nombre_pregrado?: string | null
     semestre?: semestreUncheckedCreateNestedManyWithoutPregradoInput
+    datos?: datosUncheckedCreateNestedManyWithoutPregradoInput
   }
 
   export type pregradoCreateOrConnectWithoutPreofe_mateInput = {
@@ -24820,12 +25846,14 @@ export namespace Prisma {
   export type pregradoUpdateWithoutPreofe_mateInput = {
     nombre_pregrado?: NullableStringFieldUpdateOperationsInput | string | null
     semestre?: semestreUpdateManyWithoutPregradoNestedInput
+    datos?: datosUpdateManyWithoutPregradoNestedInput
   }
 
   export type pregradoUncheckedUpdateWithoutPreofe_mateInput = {
     pk_pregrado?: IntFieldUpdateOperationsInput | number
     nombre_pregrado?: NullableStringFieldUpdateOperationsInput | string | null
     semestre?: semestreUncheckedUpdateManyWithoutPregradoNestedInput
+    datos?: datosUncheckedUpdateManyWithoutPregradoNestedInput
   }
 
   export type asignaturasUpsertWithoutPreofe_mateInput = {
@@ -24855,17 +25883,64 @@ export namespace Prisma {
   export type pregradoCreateWithoutSemestreInput = {
     nombre_pregrado?: string | null
     preofe_mate?: preofe_mateCreateNestedManyWithoutPregradoInput
+    datos?: datosCreateNestedManyWithoutPregradoInput
   }
 
   export type pregradoUncheckedCreateWithoutSemestreInput = {
     pk_pregrado?: number
     nombre_pregrado?: string | null
     preofe_mate?: preofe_mateUncheckedCreateNestedManyWithoutPregradoInput
+    datos?: datosUncheckedCreateNestedManyWithoutPregradoInput
   }
 
   export type pregradoCreateOrConnectWithoutSemestreInput = {
     where: pregradoWhereUniqueInput
     create: XOR<pregradoCreateWithoutSemestreInput, pregradoUncheckedCreateWithoutSemestreInput>
+  }
+
+  export type datosCreateWithoutSemestreInput = {
+    nombre?: string | null
+    apellido?: string | null
+    correo?: string | null
+    telefono?: string | null
+    asignatura?: string | null
+    salon?: string | null
+    dia?: string | null
+    hora_inicio?: string | null
+    hora_fin?: string | null
+    documento?: documentoCreateNestedOneWithoutDatosInput
+    civil?: civilCreateNestedOneWithoutDatosInput
+    genero?: generoCreateNestedOneWithoutDatosInput
+    pregrado?: pregradoCreateNestedOneWithoutDatosInput
+    tipo_status?: tipo_statusCreateNestedOneWithoutDatosInput
+  }
+
+  export type datosUncheckedCreateWithoutSemestreInput = {
+    pk_dato?: number
+    nombre?: string | null
+    apellido?: string | null
+    fk_id_doc?: number | null
+    fk_id_civil?: number | null
+    fk_id_gene?: number | null
+    correo?: string | null
+    telefono?: string | null
+    fk_pregrado?: number | null
+    fk_id_tipo_status?: number | null
+    asignatura?: string | null
+    salon?: string | null
+    dia?: string | null
+    hora_inicio?: string | null
+    hora_fin?: string | null
+  }
+
+  export type datosCreateOrConnectWithoutSemestreInput = {
+    where: datosWhereUniqueInput
+    create: XOR<datosCreateWithoutSemestreInput, datosUncheckedCreateWithoutSemestreInput>
+  }
+
+  export type datosCreateManySemestreInputEnvelope = {
+    data: datosCreateManySemestreInput | datosCreateManySemestreInput[]
+    skipDuplicates?: boolean
   }
 
   export type pregradoUpsertWithoutSemestreInput = {
@@ -24882,12 +25957,91 @@ export namespace Prisma {
   export type pregradoUpdateWithoutSemestreInput = {
     nombre_pregrado?: NullableStringFieldUpdateOperationsInput | string | null
     preofe_mate?: preofe_mateUpdateManyWithoutPregradoNestedInput
+    datos?: datosUpdateManyWithoutPregradoNestedInput
   }
 
   export type pregradoUncheckedUpdateWithoutSemestreInput = {
     pk_pregrado?: IntFieldUpdateOperationsInput | number
     nombre_pregrado?: NullableStringFieldUpdateOperationsInput | string | null
     preofe_mate?: preofe_mateUncheckedUpdateManyWithoutPregradoNestedInput
+    datos?: datosUncheckedUpdateManyWithoutPregradoNestedInput
+  }
+
+  export type datosUpsertWithWhereUniqueWithoutSemestreInput = {
+    where: datosWhereUniqueInput
+    update: XOR<datosUpdateWithoutSemestreInput, datosUncheckedUpdateWithoutSemestreInput>
+    create: XOR<datosCreateWithoutSemestreInput, datosUncheckedCreateWithoutSemestreInput>
+  }
+
+  export type datosUpdateWithWhereUniqueWithoutSemestreInput = {
+    where: datosWhereUniqueInput
+    data: XOR<datosUpdateWithoutSemestreInput, datosUncheckedUpdateWithoutSemestreInput>
+  }
+
+  export type datosUpdateManyWithWhereWithoutSemestreInput = {
+    where: datosScalarWhereInput
+    data: XOR<datosUpdateManyMutationInput, datosUncheckedUpdateManyWithoutSemestreInput>
+  }
+
+  export type datosCreateWithoutTipo_statusInput = {
+    nombre?: string | null
+    apellido?: string | null
+    correo?: string | null
+    telefono?: string | null
+    asignatura?: string | null
+    salon?: string | null
+    dia?: string | null
+    hora_inicio?: string | null
+    hora_fin?: string | null
+    documento?: documentoCreateNestedOneWithoutDatosInput
+    civil?: civilCreateNestedOneWithoutDatosInput
+    genero?: generoCreateNestedOneWithoutDatosInput
+    pregrado?: pregradoCreateNestedOneWithoutDatosInput
+    semestre?: semestreCreateNestedOneWithoutDatosInput
+  }
+
+  export type datosUncheckedCreateWithoutTipo_statusInput = {
+    pk_dato?: number
+    nombre?: string | null
+    apellido?: string | null
+    fk_id_doc?: number | null
+    fk_id_civil?: number | null
+    fk_id_gene?: number | null
+    correo?: string | null
+    telefono?: string | null
+    fk_pregrado?: number | null
+    fk_id_semestre?: number | null
+    asignatura?: string | null
+    salon?: string | null
+    dia?: string | null
+    hora_inicio?: string | null
+    hora_fin?: string | null
+  }
+
+  export type datosCreateOrConnectWithoutTipo_statusInput = {
+    where: datosWhereUniqueInput
+    create: XOR<datosCreateWithoutTipo_statusInput, datosUncheckedCreateWithoutTipo_statusInput>
+  }
+
+  export type datosCreateManyTipo_statusInputEnvelope = {
+    data: datosCreateManyTipo_statusInput | datosCreateManyTipo_statusInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type datosUpsertWithWhereUniqueWithoutTipo_statusInput = {
+    where: datosWhereUniqueInput
+    update: XOR<datosUpdateWithoutTipo_statusInput, datosUncheckedUpdateWithoutTipo_statusInput>
+    create: XOR<datosCreateWithoutTipo_statusInput, datosUncheckedCreateWithoutTipo_statusInput>
+  }
+
+  export type datosUpdateWithWhereUniqueWithoutTipo_statusInput = {
+    where: datosWhereUniqueInput
+    data: XOR<datosUpdateWithoutTipo_statusInput, datosUncheckedUpdateWithoutTipo_statusInput>
+  }
+
+  export type datosUpdateManyWithWhereWithoutTipo_statusInput = {
+    where: datosScalarWhereInput
+    data: XOR<datosUpdateManyMutationInput, datosUncheckedUpdateManyWithoutTipo_statusInput>
   }
 
   export type mov_asig_auCreateManyAsignaturasInput = {
@@ -24961,13 +26115,33 @@ export namespace Prisma {
     apellido?: string | null
     fk_id_doc?: number | null
     fk_id_gene?: number | null
+    correo?: string | null
+    telefono?: string | null
+    fk_pregrado?: number | null
+    fk_id_semestre?: number | null
+    fk_id_tipo_status?: number | null
+    asignatura?: string | null
+    salon?: string | null
+    dia?: string | null
+    hora_inicio?: string | null
+    hora_fin?: string | null
   }
 
   export type datosUpdateWithoutCivilInput = {
     nombre?: NullableStringFieldUpdateOperationsInput | string | null
     apellido?: NullableStringFieldUpdateOperationsInput | string | null
+    correo?: NullableStringFieldUpdateOperationsInput | string | null
+    telefono?: NullableStringFieldUpdateOperationsInput | string | null
+    asignatura?: NullableStringFieldUpdateOperationsInput | string | null
+    salon?: NullableStringFieldUpdateOperationsInput | string | null
+    dia?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_inicio?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_fin?: NullableStringFieldUpdateOperationsInput | string | null
     documento?: documentoUpdateOneWithoutDatosNestedInput
     genero?: generoUpdateOneWithoutDatosNestedInput
+    pregrado?: pregradoUpdateOneWithoutDatosNestedInput
+    semestre?: semestreUpdateOneWithoutDatosNestedInput
+    tipo_status?: tipo_statusUpdateOneWithoutDatosNestedInput
   }
 
   export type datosUncheckedUpdateWithoutCivilInput = {
@@ -24976,6 +26150,16 @@ export namespace Prisma {
     apellido?: NullableStringFieldUpdateOperationsInput | string | null
     fk_id_doc?: NullableIntFieldUpdateOperationsInput | number | null
     fk_id_gene?: NullableIntFieldUpdateOperationsInput | number | null
+    correo?: NullableStringFieldUpdateOperationsInput | string | null
+    telefono?: NullableStringFieldUpdateOperationsInput | string | null
+    fk_pregrado?: NullableIntFieldUpdateOperationsInput | number | null
+    fk_id_semestre?: NullableIntFieldUpdateOperationsInput | number | null
+    fk_id_tipo_status?: NullableIntFieldUpdateOperationsInput | number | null
+    asignatura?: NullableStringFieldUpdateOperationsInput | string | null
+    salon?: NullableStringFieldUpdateOperationsInput | string | null
+    dia?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_inicio?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_fin?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type datosUncheckedUpdateManyWithoutCivilInput = {
@@ -24984,6 +26168,16 @@ export namespace Prisma {
     apellido?: NullableStringFieldUpdateOperationsInput | string | null
     fk_id_doc?: NullableIntFieldUpdateOperationsInput | number | null
     fk_id_gene?: NullableIntFieldUpdateOperationsInput | number | null
+    correo?: NullableStringFieldUpdateOperationsInput | string | null
+    telefono?: NullableStringFieldUpdateOperationsInput | string | null
+    fk_pregrado?: NullableIntFieldUpdateOperationsInput | number | null
+    fk_id_semestre?: NullableIntFieldUpdateOperationsInput | number | null
+    fk_id_tipo_status?: NullableIntFieldUpdateOperationsInput | number | null
+    asignatura?: NullableStringFieldUpdateOperationsInput | string | null
+    salon?: NullableStringFieldUpdateOperationsInput | string | null
+    dia?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_inicio?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_fin?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type datosCreateManyDocumentoInput = {
@@ -24992,13 +26186,33 @@ export namespace Prisma {
     apellido?: string | null
     fk_id_civil?: number | null
     fk_id_gene?: number | null
+    correo?: string | null
+    telefono?: string | null
+    fk_pregrado?: number | null
+    fk_id_semestre?: number | null
+    fk_id_tipo_status?: number | null
+    asignatura?: string | null
+    salon?: string | null
+    dia?: string | null
+    hora_inicio?: string | null
+    hora_fin?: string | null
   }
 
   export type datosUpdateWithoutDocumentoInput = {
     nombre?: NullableStringFieldUpdateOperationsInput | string | null
     apellido?: NullableStringFieldUpdateOperationsInput | string | null
+    correo?: NullableStringFieldUpdateOperationsInput | string | null
+    telefono?: NullableStringFieldUpdateOperationsInput | string | null
+    asignatura?: NullableStringFieldUpdateOperationsInput | string | null
+    salon?: NullableStringFieldUpdateOperationsInput | string | null
+    dia?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_inicio?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_fin?: NullableStringFieldUpdateOperationsInput | string | null
     civil?: civilUpdateOneWithoutDatosNestedInput
     genero?: generoUpdateOneWithoutDatosNestedInput
+    pregrado?: pregradoUpdateOneWithoutDatosNestedInput
+    semestre?: semestreUpdateOneWithoutDatosNestedInput
+    tipo_status?: tipo_statusUpdateOneWithoutDatosNestedInput
   }
 
   export type datosUncheckedUpdateWithoutDocumentoInput = {
@@ -25007,6 +26221,16 @@ export namespace Prisma {
     apellido?: NullableStringFieldUpdateOperationsInput | string | null
     fk_id_civil?: NullableIntFieldUpdateOperationsInput | number | null
     fk_id_gene?: NullableIntFieldUpdateOperationsInput | number | null
+    correo?: NullableStringFieldUpdateOperationsInput | string | null
+    telefono?: NullableStringFieldUpdateOperationsInput | string | null
+    fk_pregrado?: NullableIntFieldUpdateOperationsInput | number | null
+    fk_id_semestre?: NullableIntFieldUpdateOperationsInput | number | null
+    fk_id_tipo_status?: NullableIntFieldUpdateOperationsInput | number | null
+    asignatura?: NullableStringFieldUpdateOperationsInput | string | null
+    salon?: NullableStringFieldUpdateOperationsInput | string | null
+    dia?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_inicio?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_fin?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type datosUncheckedUpdateManyWithoutDocumentoInput = {
@@ -25015,6 +26239,16 @@ export namespace Prisma {
     apellido?: NullableStringFieldUpdateOperationsInput | string | null
     fk_id_civil?: NullableIntFieldUpdateOperationsInput | number | null
     fk_id_gene?: NullableIntFieldUpdateOperationsInput | number | null
+    correo?: NullableStringFieldUpdateOperationsInput | string | null
+    telefono?: NullableStringFieldUpdateOperationsInput | string | null
+    fk_pregrado?: NullableIntFieldUpdateOperationsInput | number | null
+    fk_id_semestre?: NullableIntFieldUpdateOperationsInput | number | null
+    fk_id_tipo_status?: NullableIntFieldUpdateOperationsInput | number | null
+    asignatura?: NullableStringFieldUpdateOperationsInput | string | null
+    salon?: NullableStringFieldUpdateOperationsInput | string | null
+    dia?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_inicio?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_fin?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type civilCreateManyEstadoInput = {
@@ -25089,13 +26323,33 @@ export namespace Prisma {
     apellido?: string | null
     fk_id_doc?: number | null
     fk_id_civil?: number | null
+    correo?: string | null
+    telefono?: string | null
+    fk_pregrado?: number | null
+    fk_id_semestre?: number | null
+    fk_id_tipo_status?: number | null
+    asignatura?: string | null
+    salon?: string | null
+    dia?: string | null
+    hora_inicio?: string | null
+    hora_fin?: string | null
   }
 
   export type datosUpdateWithoutGeneroInput = {
     nombre?: NullableStringFieldUpdateOperationsInput | string | null
     apellido?: NullableStringFieldUpdateOperationsInput | string | null
+    correo?: NullableStringFieldUpdateOperationsInput | string | null
+    telefono?: NullableStringFieldUpdateOperationsInput | string | null
+    asignatura?: NullableStringFieldUpdateOperationsInput | string | null
+    salon?: NullableStringFieldUpdateOperationsInput | string | null
+    dia?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_inicio?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_fin?: NullableStringFieldUpdateOperationsInput | string | null
     documento?: documentoUpdateOneWithoutDatosNestedInput
     civil?: civilUpdateOneWithoutDatosNestedInput
+    pregrado?: pregradoUpdateOneWithoutDatosNestedInput
+    semestre?: semestreUpdateOneWithoutDatosNestedInput
+    tipo_status?: tipo_statusUpdateOneWithoutDatosNestedInput
   }
 
   export type datosUncheckedUpdateWithoutGeneroInput = {
@@ -25104,6 +26358,16 @@ export namespace Prisma {
     apellido?: NullableStringFieldUpdateOperationsInput | string | null
     fk_id_doc?: NullableIntFieldUpdateOperationsInput | number | null
     fk_id_civil?: NullableIntFieldUpdateOperationsInput | number | null
+    correo?: NullableStringFieldUpdateOperationsInput | string | null
+    telefono?: NullableStringFieldUpdateOperationsInput | string | null
+    fk_pregrado?: NullableIntFieldUpdateOperationsInput | number | null
+    fk_id_semestre?: NullableIntFieldUpdateOperationsInput | number | null
+    fk_id_tipo_status?: NullableIntFieldUpdateOperationsInput | number | null
+    asignatura?: NullableStringFieldUpdateOperationsInput | string | null
+    salon?: NullableStringFieldUpdateOperationsInput | string | null
+    dia?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_inicio?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_fin?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type datosUncheckedUpdateManyWithoutGeneroInput = {
@@ -25112,6 +26376,16 @@ export namespace Prisma {
     apellido?: NullableStringFieldUpdateOperationsInput | string | null
     fk_id_doc?: NullableIntFieldUpdateOperationsInput | number | null
     fk_id_civil?: NullableIntFieldUpdateOperationsInput | number | null
+    correo?: NullableStringFieldUpdateOperationsInput | string | null
+    telefono?: NullableStringFieldUpdateOperationsInput | string | null
+    fk_pregrado?: NullableIntFieldUpdateOperationsInput | number | null
+    fk_id_semestre?: NullableIntFieldUpdateOperationsInput | number | null
+    fk_id_tipo_status?: NullableIntFieldUpdateOperationsInput | number | null
+    asignatura?: NullableStringFieldUpdateOperationsInput | string | null
+    salon?: NullableStringFieldUpdateOperationsInput | string | null
+    dia?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_inicio?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_fin?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type mov_asig_auCreateManyHorariosInput = {
@@ -25170,6 +26444,24 @@ export namespace Prisma {
     numero?: number | null
   }
 
+  export type datosCreateManyPregradoInput = {
+    pk_dato?: number
+    nombre?: string | null
+    apellido?: string | null
+    fk_id_doc?: number | null
+    fk_id_civil?: number | null
+    fk_id_gene?: number | null
+    correo?: string | null
+    telefono?: string | null
+    fk_id_semestre?: number | null
+    fk_id_tipo_status?: number | null
+    asignatura?: string | null
+    salon?: string | null
+    dia?: string | null
+    hora_inicio?: string | null
+    hora_fin?: string | null
+  }
+
   export type preofe_mateUpdateWithoutPregradoInput = {
     asignaturas?: asignaturasUpdateOneWithoutPreofe_mateNestedInput
   }
@@ -25186,16 +26478,213 @@ export namespace Prisma {
 
   export type semestreUpdateWithoutPregradoInput = {
     numero?: NullableIntFieldUpdateOperationsInput | number | null
+    datos?: datosUpdateManyWithoutSemestreNestedInput
   }
 
   export type semestreUncheckedUpdateWithoutPregradoInput = {
     pk_semestre?: IntFieldUpdateOperationsInput | number
     numero?: NullableIntFieldUpdateOperationsInput | number | null
+    datos?: datosUncheckedUpdateManyWithoutSemestreNestedInput
   }
 
   export type semestreUncheckedUpdateManyWithoutPregradoInput = {
     pk_semestre?: IntFieldUpdateOperationsInput | number
     numero?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type datosUpdateWithoutPregradoInput = {
+    nombre?: NullableStringFieldUpdateOperationsInput | string | null
+    apellido?: NullableStringFieldUpdateOperationsInput | string | null
+    correo?: NullableStringFieldUpdateOperationsInput | string | null
+    telefono?: NullableStringFieldUpdateOperationsInput | string | null
+    asignatura?: NullableStringFieldUpdateOperationsInput | string | null
+    salon?: NullableStringFieldUpdateOperationsInput | string | null
+    dia?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_inicio?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_fin?: NullableStringFieldUpdateOperationsInput | string | null
+    documento?: documentoUpdateOneWithoutDatosNestedInput
+    civil?: civilUpdateOneWithoutDatosNestedInput
+    genero?: generoUpdateOneWithoutDatosNestedInput
+    semestre?: semestreUpdateOneWithoutDatosNestedInput
+    tipo_status?: tipo_statusUpdateOneWithoutDatosNestedInput
+  }
+
+  export type datosUncheckedUpdateWithoutPregradoInput = {
+    pk_dato?: IntFieldUpdateOperationsInput | number
+    nombre?: NullableStringFieldUpdateOperationsInput | string | null
+    apellido?: NullableStringFieldUpdateOperationsInput | string | null
+    fk_id_doc?: NullableIntFieldUpdateOperationsInput | number | null
+    fk_id_civil?: NullableIntFieldUpdateOperationsInput | number | null
+    fk_id_gene?: NullableIntFieldUpdateOperationsInput | number | null
+    correo?: NullableStringFieldUpdateOperationsInput | string | null
+    telefono?: NullableStringFieldUpdateOperationsInput | string | null
+    fk_id_semestre?: NullableIntFieldUpdateOperationsInput | number | null
+    fk_id_tipo_status?: NullableIntFieldUpdateOperationsInput | number | null
+    asignatura?: NullableStringFieldUpdateOperationsInput | string | null
+    salon?: NullableStringFieldUpdateOperationsInput | string | null
+    dia?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_inicio?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_fin?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type datosUncheckedUpdateManyWithoutPregradoInput = {
+    pk_dato?: IntFieldUpdateOperationsInput | number
+    nombre?: NullableStringFieldUpdateOperationsInput | string | null
+    apellido?: NullableStringFieldUpdateOperationsInput | string | null
+    fk_id_doc?: NullableIntFieldUpdateOperationsInput | number | null
+    fk_id_civil?: NullableIntFieldUpdateOperationsInput | number | null
+    fk_id_gene?: NullableIntFieldUpdateOperationsInput | number | null
+    correo?: NullableStringFieldUpdateOperationsInput | string | null
+    telefono?: NullableStringFieldUpdateOperationsInput | string | null
+    fk_id_semestre?: NullableIntFieldUpdateOperationsInput | number | null
+    fk_id_tipo_status?: NullableIntFieldUpdateOperationsInput | number | null
+    asignatura?: NullableStringFieldUpdateOperationsInput | string | null
+    salon?: NullableStringFieldUpdateOperationsInput | string | null
+    dia?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_inicio?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_fin?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type datosCreateManySemestreInput = {
+    pk_dato?: number
+    nombre?: string | null
+    apellido?: string | null
+    fk_id_doc?: number | null
+    fk_id_civil?: number | null
+    fk_id_gene?: number | null
+    correo?: string | null
+    telefono?: string | null
+    fk_pregrado?: number | null
+    fk_id_tipo_status?: number | null
+    asignatura?: string | null
+    salon?: string | null
+    dia?: string | null
+    hora_inicio?: string | null
+    hora_fin?: string | null
+  }
+
+  export type datosUpdateWithoutSemestreInput = {
+    nombre?: NullableStringFieldUpdateOperationsInput | string | null
+    apellido?: NullableStringFieldUpdateOperationsInput | string | null
+    correo?: NullableStringFieldUpdateOperationsInput | string | null
+    telefono?: NullableStringFieldUpdateOperationsInput | string | null
+    asignatura?: NullableStringFieldUpdateOperationsInput | string | null
+    salon?: NullableStringFieldUpdateOperationsInput | string | null
+    dia?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_inicio?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_fin?: NullableStringFieldUpdateOperationsInput | string | null
+    documento?: documentoUpdateOneWithoutDatosNestedInput
+    civil?: civilUpdateOneWithoutDatosNestedInput
+    genero?: generoUpdateOneWithoutDatosNestedInput
+    pregrado?: pregradoUpdateOneWithoutDatosNestedInput
+    tipo_status?: tipo_statusUpdateOneWithoutDatosNestedInput
+  }
+
+  export type datosUncheckedUpdateWithoutSemestreInput = {
+    pk_dato?: IntFieldUpdateOperationsInput | number
+    nombre?: NullableStringFieldUpdateOperationsInput | string | null
+    apellido?: NullableStringFieldUpdateOperationsInput | string | null
+    fk_id_doc?: NullableIntFieldUpdateOperationsInput | number | null
+    fk_id_civil?: NullableIntFieldUpdateOperationsInput | number | null
+    fk_id_gene?: NullableIntFieldUpdateOperationsInput | number | null
+    correo?: NullableStringFieldUpdateOperationsInput | string | null
+    telefono?: NullableStringFieldUpdateOperationsInput | string | null
+    fk_pregrado?: NullableIntFieldUpdateOperationsInput | number | null
+    fk_id_tipo_status?: NullableIntFieldUpdateOperationsInput | number | null
+    asignatura?: NullableStringFieldUpdateOperationsInput | string | null
+    salon?: NullableStringFieldUpdateOperationsInput | string | null
+    dia?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_inicio?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_fin?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type datosUncheckedUpdateManyWithoutSemestreInput = {
+    pk_dato?: IntFieldUpdateOperationsInput | number
+    nombre?: NullableStringFieldUpdateOperationsInput | string | null
+    apellido?: NullableStringFieldUpdateOperationsInput | string | null
+    fk_id_doc?: NullableIntFieldUpdateOperationsInput | number | null
+    fk_id_civil?: NullableIntFieldUpdateOperationsInput | number | null
+    fk_id_gene?: NullableIntFieldUpdateOperationsInput | number | null
+    correo?: NullableStringFieldUpdateOperationsInput | string | null
+    telefono?: NullableStringFieldUpdateOperationsInput | string | null
+    fk_pregrado?: NullableIntFieldUpdateOperationsInput | number | null
+    fk_id_tipo_status?: NullableIntFieldUpdateOperationsInput | number | null
+    asignatura?: NullableStringFieldUpdateOperationsInput | string | null
+    salon?: NullableStringFieldUpdateOperationsInput | string | null
+    dia?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_inicio?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_fin?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type datosCreateManyTipo_statusInput = {
+    pk_dato?: number
+    nombre?: string | null
+    apellido?: string | null
+    fk_id_doc?: number | null
+    fk_id_civil?: number | null
+    fk_id_gene?: number | null
+    correo?: string | null
+    telefono?: string | null
+    fk_pregrado?: number | null
+    fk_id_semestre?: number | null
+    asignatura?: string | null
+    salon?: string | null
+    dia?: string | null
+    hora_inicio?: string | null
+    hora_fin?: string | null
+  }
+
+  export type datosUpdateWithoutTipo_statusInput = {
+    nombre?: NullableStringFieldUpdateOperationsInput | string | null
+    apellido?: NullableStringFieldUpdateOperationsInput | string | null
+    correo?: NullableStringFieldUpdateOperationsInput | string | null
+    telefono?: NullableStringFieldUpdateOperationsInput | string | null
+    asignatura?: NullableStringFieldUpdateOperationsInput | string | null
+    salon?: NullableStringFieldUpdateOperationsInput | string | null
+    dia?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_inicio?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_fin?: NullableStringFieldUpdateOperationsInput | string | null
+    documento?: documentoUpdateOneWithoutDatosNestedInput
+    civil?: civilUpdateOneWithoutDatosNestedInput
+    genero?: generoUpdateOneWithoutDatosNestedInput
+    pregrado?: pregradoUpdateOneWithoutDatosNestedInput
+    semestre?: semestreUpdateOneWithoutDatosNestedInput
+  }
+
+  export type datosUncheckedUpdateWithoutTipo_statusInput = {
+    pk_dato?: IntFieldUpdateOperationsInput | number
+    nombre?: NullableStringFieldUpdateOperationsInput | string | null
+    apellido?: NullableStringFieldUpdateOperationsInput | string | null
+    fk_id_doc?: NullableIntFieldUpdateOperationsInput | number | null
+    fk_id_civil?: NullableIntFieldUpdateOperationsInput | number | null
+    fk_id_gene?: NullableIntFieldUpdateOperationsInput | number | null
+    correo?: NullableStringFieldUpdateOperationsInput | string | null
+    telefono?: NullableStringFieldUpdateOperationsInput | string | null
+    fk_pregrado?: NullableIntFieldUpdateOperationsInput | number | null
+    fk_id_semestre?: NullableIntFieldUpdateOperationsInput | number | null
+    asignatura?: NullableStringFieldUpdateOperationsInput | string | null
+    salon?: NullableStringFieldUpdateOperationsInput | string | null
+    dia?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_inicio?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_fin?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type datosUncheckedUpdateManyWithoutTipo_statusInput = {
+    pk_dato?: IntFieldUpdateOperationsInput | number
+    nombre?: NullableStringFieldUpdateOperationsInput | string | null
+    apellido?: NullableStringFieldUpdateOperationsInput | string | null
+    fk_id_doc?: NullableIntFieldUpdateOperationsInput | number | null
+    fk_id_civil?: NullableIntFieldUpdateOperationsInput | number | null
+    fk_id_gene?: NullableIntFieldUpdateOperationsInput | number | null
+    correo?: NullableStringFieldUpdateOperationsInput | string | null
+    telefono?: NullableStringFieldUpdateOperationsInput | string | null
+    fk_pregrado?: NullableIntFieldUpdateOperationsInput | number | null
+    fk_id_semestre?: NullableIntFieldUpdateOperationsInput | number | null
+    asignatura?: NullableStringFieldUpdateOperationsInput | string | null
+    salon?: NullableStringFieldUpdateOperationsInput | string | null
+    dia?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_inicio?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_fin?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
 
