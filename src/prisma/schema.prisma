@@ -72,6 +72,7 @@ model datos {
   dia                String?        @db.VarChar(20)
   hora_inicio        String?        @db.VarChar(10)
   hora_fin           String?        @db.VarChar(10)
+  tipo_usuario       String?        @db.VarChar(20) @default("ESTUDIANTE")
   documento          documento?     @relation(fields: [fk_id_doc], references: [pk_id_doc], onDelete: Restrict, onUpdate: Restrict, map: "datos_ibfk_1")
   civil              civil?         @relation(fields: [fk_id_civil], references: [pk_id_civil], onDelete: Restrict, onUpdate: Restrict, map: "datos_ibfk_2")
   genero             genero?        @relation(fields: [fk_id_gene], references: [pk_id_gene], onDelete: Restrict, onUpdate: Restrict, map: "datos_ibfk_3")

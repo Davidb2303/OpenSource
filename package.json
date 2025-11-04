@@ -7,7 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/server.js",
-    "seed": "node src/scripts/seedDatabase.js"
+    "seed": "node src/prisma/seed.js",
+    "prisma:seed": "prisma db seed"
   },
   "keywords": [],
   "author": "",

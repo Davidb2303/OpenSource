@@ -362,10 +362,20 @@ export const ExportController = {
     }
   },
 
-  // POST /api/export/excel - Exportar todo a Excel con múltiples hojas
+  // POST /api/export/excel - Exportar todo a Excel con múltiples hojas (Solo ESTUDIANTES)
   excel(req, res) {
     try {
-      const { registros = [] } = req.body;
+      let { registros = [] } = req.body;
+      
+      // 🔍 Filtrar solo ESTUDIANTES (excluir maestros)
+      registros = registros.filter(
+        (reg) => !reg.tipo_usuario || reg.tipo_usuario === "ESTUDIANTE"
+      );
+      
+      if (registros.length === 0) {
+        return res.status(400).json({ message: "No hay estudiantes para exportar" });
+      }
+      
       const workbook = buildCompleteStudentExcelWorkbook(registros);
       
       // Generar buffer
